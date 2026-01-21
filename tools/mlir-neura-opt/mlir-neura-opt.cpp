@@ -11,7 +11,12 @@
 #include "mlir/Support/FileUtilities.h"
 #include "mlir/Support/LogicalResult.h"
 #include "mlir/Tools/mlir-opt/MlirOptMain.h"
+#include "mlir/Dialect/Math/IR/Math.h"
 #include "llvm/Support/CommandLine.h"
+
+#include "mlir/Dialect/Bufferization/IR/Bufferization.h" 
+#include "mlir/Dialect/Vector/IR/VectorOps.h"           
+#include "mlir/Dialect/Tensor/IR/Tensor.h"
 
 #include "Conversion/ConversionPasses.h"
 #include "NeuraDialect/NeuraDialect.h"
@@ -67,9 +72,14 @@ int main(int argc, char **argv) {
   registry.insert<mlir::DLTIDialect>();
   registry.insert<mlir::LLVM::LLVMDialect>();
   registry.insert<mlir::memref::MemRefDialect>();
-
+  registry.insert<mlir::bufferization::BufferizationDialect>();
+  registry.insert<mlir::vector::VectorDialect>();
+  registry.insert<mlir::tensor::TensorDialect>();
+  registry.insert<mlir::math::MathDialect>();
+ 
   mlir::neura::registerPasses();
-  mlir::registerPasses();
+  mlir::registerAllPasses();
+  // mlir::registerPasses();
   mlir::registerViewOpGraphPass();
   
   // Register all standard conversion passes

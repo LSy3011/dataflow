@@ -1,5 +1,3 @@
-// NeuraPasses.h - Header file for Neura passes
-
 #ifndef NEURA_PASSES_H
 #define NEURA_PASSES_H
 
@@ -8,6 +6,7 @@
 #include "mlir/Pass/Pass.h"
 #include "mlir/Pass/PassManager.h"
 #include "mlir/Pass/PassRegistry.h"
+#include "mlir/Dialect/Func/IR/FuncOps.h"
 #include <memory>
 
 namespace mlir {
@@ -29,7 +28,9 @@ std::unique_ptr<mlir::Pass> createCanonicalizeLiveInPass();
 std::unique_ptr<mlir::Pass> createPromoteFuncArgToConstPass();
 std::unique_ptr<mlir::Pass> createTransformToSteerControlPass();
 std::unique_ptr<mlir::Pass> createRemovePredicatedTypePass();
-
+std::unique_ptr<OperationPass<func::FuncOp>> createStaticFeatureExtractionPass();
+std::unique_ptr<OperationPass<func::FuncOp>> createTaskDependencyAnalysisPass();
+std::unique_ptr<OperationPass<func::FuncOp>> createProfitBasedSpatialOrchestrationPass();
 // ====================================
 // Optimization Passes
 // ====================================

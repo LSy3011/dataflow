@@ -15,7 +15,10 @@ add_mlir_library(
     PromoteFuncArgToConstPass.cpp
     TransformToSteerControlPass.cpp
     RemovePredicatedTypePass.cpp
-
+    StaticFeatureExtractionPass.cpp
+    TaskDependencyAnalysisPass.cpp
+    ProfitBasedSpatialOrchestrationPass.cpp
+	
     DEPENDS
     MLIRNeuraTransformsIncGen
 

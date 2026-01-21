@@ -135,4 +135,29 @@ def RemovePredicatedType : Pass<"remove-predicated-type", "ModuleOp"> {
   let constructor = "neura::createRemovePredicatedTypePass()";
 }
 
+def StaticFeatureExtraction : Pass<"static-feature-extraction", "func::FuncOp"> {
+  let summary = "Extract multi-dimensional static features from code";
+  let description = [{
+    Analyzes the IR to calculate:
+    - Vectorization Rate
+    - Arithmetic Intensity
+    - Loop Depth
+    - Memory Access patterns
+    - Buffer requirements
+    - Communication metrics (Fan-out, Live vars)
+  }];
+  let constructor = "mlir::neura::createStaticFeatureExtractionPass()";
+}
+def TaskDependencyAnalysis : Pass<"task-dependency-analysis", "func::FuncOp"> {
+  let summary = "Analyze dependencies between tasks";
+  let description = [{
+    Analyzes data dependencies (Read-After-Write, etc.) between top-level tasks 
+    (loops) to determine if they can run in parallel or must be streamed.
+  }];
+  let constructor = "mlir::neura::createTaskDependencyAnalysisPass()";
+}
+def ProfitBasedSpatialOrchestration : Pass<"spatial-orchestration", "func::FuncOp"> {
+  let summary = "Map tasks based on profit model";
+  let constructor = "mlir::neura::createProfitBasedSpatialOrchestrationPass()";
+}
 #endif // NEURA_PASSES_TD

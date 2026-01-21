@@ -52,44 +52,43 @@ module {
     %c3 = arith.constant 3 : index
     %c0_i64 = arith.constant 0 : i64
     %cst_46 = arith.constant dense_resource<torch_tensor_30522_768_torch.float32> : tensor<30522x768xf32>
-    %0 = bufferization.to_memref %arg2 : memref<1x128xi64>
-    %1 = bufferization.to_memref %arg1 : memref<1x128xi64>
-    %2 = bufferization.to_memref %arg1 : memref<1x128xi64>
-    %3 = bufferization.to_memref %cst_31 : memref<768xf32>
-    %4 = bufferization.to_memref %cst_30 : memref<768xf32>
-    %5 = bufferization.to_memref %cst_29 : memref<768x768xf32>
-    %6 = bufferization.to_memref %cst_28 : memref<768xf32>
-    %7 = bufferization.to_memref %cst_27 : memref<768x768xf32>
-    %8 = bufferization.to_memref %cst_26 : memref<768xf32>
-    %9 = bufferization.to_memref %cst_25 : memref<768x768xf32>
-    %10 = bufferization.to_memref %cst_24 : memref<768xf32>
-    %11 = bufferization.to_memref %cst_23 : memref<768x768xf32>
-    %12 = bufferization.to_memref %cst_22 : memref<768xf32>
-    %13 = bufferization.to_memref %cst_21 : memref<768xf32>
-    %14 = bufferization.to_memref %cst_20 : memref<768xf32>
-    %15 = bufferization.to_memref %cst_19 : memref<3072x768xf32>
-    %16 = bufferization.to_memref %cst_18 : memref<3072xf32>
-    %17 = bufferization.to_memref %cst_17 : memref<768x3072xf32>
-    %18 = bufferization.to_memref %cst_16 : memref<768xf32>
-    %19 = bufferization.to_memref %cst_15 : memref<768xf32>
-    %20 = bufferization.to_memref %cst_14 : memref<768xf32>
-    %21 = bufferization.to_memref %cst_13 : memref<768x768xf32>
-    %22 = bufferization.to_memref %cst_12 : memref<768xf32>
-    %23 = bufferization.to_memref %cst_11 : memref<768x768xf32>
-    %24 = bufferization.to_memref %cst_10 : memref<768xf32>
-    %25 = bufferization.to_memref %cst_9 : memref<768x768xf32>
-    %26 = bufferization.to_memref %cst_8 : memref<768xf32>
-    %27 = bufferization.to_memref %cst_7 : memref<768x768xf32>
-    %28 = bufferization.to_memref %cst_6 : memref<768xf32>
-    %29 = bufferization.to_memref %cst_5 : memref<768xf32>
-    %30 = bufferization.to_memref %cst_4 : memref<768xf32>
-    %31 = bufferization.to_memref %cst_3 : memref<3072x768xf32>
-    %32 = bufferization.to_memref %cst_2 : memref<3072xf32>
-    %33 = bufferization.to_memref %cst_1 : memref<768x3072xf32>
-    %34 = bufferization.to_memref %cst_0 : memref<768xf32>
-    %35 = bufferization.to_memref %cst : memref<f64>
+    %0 = bufferization.to_memref %arg2 : tensor<1x128xi64> to memref<1x128xi64>
+    %1 = bufferization.to_memref %arg1 : tensor<1x128xi64> to memref<1x128xi64>
+    %2 = bufferization.to_memref %arg1 : tensor<1x128xi64> to memref<1x128xi64>
+    %3 = bufferization.to_memref %cst_31 : tensor<768xf32> to memref<768xf32>
+    %4 = bufferization.to_memref %cst_30 : tensor<768xf32> to memref<768xf32>
+    %5 = bufferization.to_memref %cst_29 : tensor<768x768xf32> to memref<768x768xf32>
+    %6 = bufferization.to_memref %cst_28 : tensor<768xf32> to memref<768xf32>
+    %7 = bufferization.to_memref %cst_27 : tensor<768x768xf32> to memref<768x768xf32>
+    %8 = bufferization.to_memref %cst_26 : tensor<768xf32> to memref<768xf32>
+    %9 = bufferization.to_memref %cst_25 : tensor<768x768xf32> to memref<768x768xf32>
+    %10 = bufferization.to_memref %cst_24 : tensor<768xf32> to memref<768xf32>
+    %11 = bufferization.to_memref %cst_23 : tensor<768x768xf32> to memref<768x768xf32>
+    %12 = bufferization.to_memref %cst_22 : tensor<768xf32> to memref<768xf32>
+    %13 = bufferization.to_memref %cst_21 : tensor<768xf32> to memref<768xf32>
+    %14 = bufferization.to_memref %cst_20 : tensor<768xf32> to memref<768xf32>
+    %15 = bufferization.to_memref %cst_19 : tensor<3072x768xf32> to memref<3072x768xf32>
+    %16 = bufferization.to_memref %cst_18 : tensor<3072xf32> to memref<3072xf32>
+    %17 = bufferization.to_memref %cst_17 : tensor<768x3072xf32> to memref<768x3072xf32>
+    %18 = bufferization.to_memref %cst_16 : tensor<768xf32> to memref<768xf32>
+    %19 = bufferization.to_memref %cst_15 : tensor<768xf32> to memref<768xf32>
+    %20 = bufferization.to_memref %cst_14 : tensor<768xf32> to memref<768xf32>
+    %21 = bufferization.to_memref %cst_13 : tensor<768x768xf32> to memref<768x768xf32>
+    %22 = bufferization.to_memref %cst_12 : tensor<768xf32> to memref<768xf32>
+    %23 = bufferization.to_memref %cst_11 : tensor<768x768xf32> to memref<768x768xf32>
+    %24 = bufferization.to_memref %cst_10 : tensor<768xf32> to memref<768xf32>
+    %25 = bufferization.to_memref %cst_9 : tensor<768x768xf32> to memref<768x768xf32>
+    %26 = bufferization.to_memref %cst_8 : tensor<768xf32> to memref<768xf32>
+    %27 = bufferization.to_memref %cst_7 : tensor<768x768xf32> to memref<768x768xf32>
+    %28 = bufferization.to_memref %cst_6 : tensor<768xf32> to memref<768xf32>
+    %29 = bufferization.to_memref %cst_5 : tensor<768xf32> to memref<768xf32>
+    %30 = bufferization.to_memref %cst_4 : tensor<768xf32> to memref<768xf32>
+    %31 = bufferization.to_memref %cst_3 : tensor<3072x768xf32> to memref<3072x768xf32>
+    %32 = bufferization.to_memref %cst_2 : tensor<3072xf32> to memref<3072xf32>
+    %33 = bufferization.to_memref %cst_1 : tensor<768x3072xf32> to memref<768x3072xf32>
+    %34 = bufferization.to_memref %cst_0 : tensor<768xf32> to memref<768xf32>
+    %35 = bufferization.to_memref %cst : tensor<f64> to memref<f64>
     %alloc = memref.alloc() {alignment = 64 : i64} : memref<1x128xi1>
-    // Node0
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         %88 = affine.load %2[%c0, %arg4] : memref<1x128xi64>
@@ -97,11 +96,10 @@ module {
         affine.store %89, %alloc[%arg3, %arg4] : memref<1x128xi1>
       }
     }
-    %36 = bufferization.to_tensor %alloc : memref<1x128xi1>
-    %expanded = tensor.expand_shape %36 [[0, 1], [2, 3, 4, 5]] : tensor<1x128xi1> into tensor<1x1x1x1x1x128xi1>
-    %37 = bufferization.to_memref %expanded : memref<1x1x1x1x1x128xi1>
+    %36 = bufferization.to_tensor %alloc : memref<1x128xi1> to tensor<1x128xi1>
+    %expanded = tensor.expand_shape %36 [[0, 1], [2, 3, 4, 5]] output_shape [1, 1, 1, 1, 1, 128] : tensor<1x128xi1> into tensor<1x1x1x1x1x128xi1>
+    %37 = bufferization.to_memref %expanded : tensor<1x1x1x1x1x128xi1> to memref<1x1x1x1x1x128xi1>
     %alloc_47 = memref.alloc() {alignment = 64 : i64} : memref<1x1x128x1x1x128xi1>
-    // Node1
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 1 {
         affine.for %arg5 = 0 to 128 {
@@ -116,12 +114,11 @@ module {
         }
       }
     }
-    %38 = bufferization.to_tensor %alloc_47 : memref<1x1x128x1x1x128xi1>
+    %38 = bufferization.to_tensor %alloc_47 : memref<1x1x128x1x1x128xi1> to tensor<1x1x128x1x1x128xi1>
     %collapsed = tensor.collapse_shape %38 [[0], [1, 2], [3, 4, 5]] : tensor<1x1x128x1x1x128xi1> into tensor<1x128x128xi1>
-    %expanded_48 = tensor.expand_shape %collapsed [[0], [1, 2], [3]] : tensor<1x128x128xi1> into tensor<1x1x128x128xi1>
-    %39 = bufferization.to_memref %expanded_48 : memref<1x1x128x128xi1>
+    %expanded_48 = tensor.expand_shape %collapsed [[0], [1, 2], [3]] output_shape [1, 1, 128, 128] : tensor<1x128x128xi1> into tensor<1x1x128x128xi1>
+    %39 = bufferization.to_memref %expanded_48 : tensor<1x1x128x128xi1> to memref<1x1x128x128xi1>
     %alloc_49 = memref.alloc() {alignment = 64 : i64} : memref<1x128x768xf32>
-    // Node2
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -137,9 +134,8 @@ module {
       }
     }
     %extracted_slice = tensor.extract_slice %arg0[0, 0, 0] [1, 128, 768] [1, 1, 1] : tensor<1x512x768xf32> to tensor<1x128x768xf32>
-    %40 = bufferization.to_memref %extracted_slice : memref<1x128x768xf32>
+    %40 = bufferization.to_memref %extracted_slice : tensor<1x128x768xf32> to memref<1x128x768xf32>
     %alloc_50 = memref.alloc() {alignment = 64 : i64} : memref<1x128x768xf32>
-    // Node3
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -151,7 +147,6 @@ module {
       }
     }
     %alloc_51 = memref.alloc() {alignment = 64 : i64} : memref<1x128x768xf32>
-    // Node4
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -167,7 +162,6 @@ module {
       }
     }
     %alloc_52 = memref.alloc() {alignment = 64 : i64} : memref<1x128x768xf32>
-    // Node5
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -179,7 +173,6 @@ module {
       }
     }
     %alloc_53 = memref.alloc() {alignment = 64 : i64} : memref<1x128x1xf32>
-    // Node6
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 1 {
@@ -189,7 +182,6 @@ module {
     }
     %alloc_54 = memref.alloc() {alignment = 64 : i64} : memref<1x128x1xf32>
     memref.copy %alloc_53, %alloc_54 : memref<1x128x1xf32> to memref<1x128x1xf32>
-    // Node7
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -201,7 +193,6 @@ module {
       }
     }
     %alloc_55 = memref.alloc() {alignment = 64 : i64} : memref<1x128x1xf32>
-    // Node8
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 1 {
@@ -212,7 +203,6 @@ module {
       }
     }
     %alloc_56 = memref.alloc() {alignment = 64 : i64} : memref<1x128x768xf64>
-    // Node9
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -223,7 +213,6 @@ module {
       }
     }
     %alloc_57 = memref.alloc() {alignment = 64 : i64} : memref<1x128x1xf64>
-    // Node10
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 1 {
@@ -233,7 +222,6 @@ module {
     }
     %alloc_58 = memref.alloc() {alignment = 64 : i64} : memref<1x128x1xf64>
     memref.copy %alloc_57, %alloc_58 : memref<1x128x1xf64> to memref<1x128x1xf64>
-    // Node11
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -245,7 +233,6 @@ module {
       }
     }
     %alloc_59 = memref.alloc() {alignment = 64 : i64} : memref<1x128x1xf64>
-    // Node12
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 1 {
@@ -256,7 +243,6 @@ module {
       }
     }
     %alloc_60 = memref.alloc() {alignment = 64 : i64} : memref<1x128x768xf64>
-    // Node13
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -268,7 +254,6 @@ module {
       }
     }
     %alloc_61 = memref.alloc() {alignment = 64 : i64} : memref<1x128x768xf64>
-    // Node14
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -281,7 +266,6 @@ module {
     }
     %alloc_62 = memref.alloc() {alignment = 64 : i64} : memref<1x128x1xf64>
     memref.copy %alloc_57, %alloc_62 : memref<1x128x1xf64> to memref<1x128x1xf64>
-    // Node15
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -293,7 +277,6 @@ module {
       }
     }
     %alloc_63 = memref.alloc() {alignment = 64 : i64} : memref<1x128x1xf64>
-    // Node16
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 1 {
@@ -304,7 +287,6 @@ module {
       }
     }
     %alloc_64 = memref.alloc() {alignment = 64 : i64} : memref<1x128x1xf32>
-    // Node17
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 1 {
@@ -315,7 +297,6 @@ module {
       }
     }
     %alloc_65 = memref.alloc() {alignment = 64 : i64} : memref<1x128x1xf32>
-    // Node18
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 1 {
@@ -326,7 +307,6 @@ module {
       }
     }
     %alloc_66 = memref.alloc() {alignment = 64 : i64} : memref<1x128x768xf32>
-    // Node19
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -338,7 +318,6 @@ module {
       }
     }
     %alloc_67 = memref.alloc() {alignment = 64 : i64} : memref<1x128x768xf32>
-    // Node20
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -350,7 +329,6 @@ module {
       }
     }
     %alloc_68 = memref.alloc() {alignment = 64 : i64} : memref<1x128x1xf32>
-    // Node21
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 1 {
@@ -362,7 +340,6 @@ module {
       }
     }
     %alloc_69 = memref.alloc() {alignment = 64 : i64} : memref<1x128x768xf32>
-    // Node22
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -374,7 +351,6 @@ module {
       }
     }
     %alloc_70 = memref.alloc() {alignment = 64 : i64} : memref<1x128x768xf32>
-    // Node23
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -386,7 +362,6 @@ module {
       }
     }
     %alloc_71 = memref.alloc() {alignment = 64 : i64} : memref<768x768xf32>
-    // Node24
     affine.for %arg3 = 0 to 768 {
       affine.for %arg4 = 0 to 768 {
         %88 = affine.load %5[%arg3, %arg4] : memref<768x768xf32>
@@ -394,7 +369,6 @@ module {
       }
     }
     %alloc_72 = memref.alloc() {alignment = 64 : i64} : memref<1x128x768xf32>
-    // Node25
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -404,7 +378,6 @@ module {
       }
     }
     %alloc_73 = memref.alloc() {alignment = 64 : i64} : memref<1x768x768xf32>
-    // Node26
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 768 {
         affine.for %arg5 = 0 to 768 {
@@ -414,7 +387,6 @@ module {
       }
     }
     %alloc_74 = memref.alloc() {alignment = 64 : i64} : memref<1x128x768xf32>
-    // Node27
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -424,7 +396,6 @@ module {
     }
     %alloc_75 = memref.alloc() {alignment = 64 : i64} : memref<1x128x768xf32>
     memref.copy %alloc_74, %alloc_75 : memref<1x128x768xf32> to memref<1x128x768xf32>
-    // Node28
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -440,7 +411,6 @@ module {
       }
     }
     %alloc_76 = memref.alloc() {alignment = 64 : i64} : memref<1x128x768xf32>
-    // Node29
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 768 {
@@ -451,11 +421,10 @@ module {
         }
       }
     }
-    %41 = bufferization.to_tensor %alloc_76 : memref<1x128x768xf32>
-    %expanded_77 = tensor.expand_shape %41 [[0], [1], [2, 3]] : tensor<1x128x768xf32> into tensor<1x128x12x64xf32>
-    %42 = bufferization.to_memref %expanded_77 : memref<1x128x12x64xf32>
+    %41 = bufferization.to_tensor %alloc_76 : memref<1x128x768xf32> to tensor<1x128x768xf32>
+    %expanded_77 = tensor.expand_shape %41 [[0], [1], [2, 3]] output_shape [1, 128, 12, 64] : tensor<1x128x768xf32> into tensor<1x128x12x64xf32>
+    %42 = bufferization.to_memref %expanded_77 : tensor<1x128x12x64xf32> to memref<1x128x12x64xf32>
     %alloc_78 = memref.alloc() {alignment = 64 : i64} : memref<1x12x128x64xf32>
-    // Node30
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
         affine.for %arg5 = 0 to 12 {
@@ -509,9 +478,9 @@ module {
         }
       }
     }
-    %43 = bufferization.to_tensor %alloc_82 : memref<1x128x768xf32>
-    %expanded_83 = tensor.expand_shape %43 [[0], [1], [2, 3]] : tensor<1x128x768xf32> into tensor<1x128x12x64xf32>
-    %44 = bufferization.to_memref %expanded_83 : memref<1x128x12x64xf32>
+    %43 = bufferization.to_tensor %alloc_82 : memref<1x128x768xf32> to tensor<1x128x768xf32>
+    %expanded_83 = tensor.expand_shape %43 [[0], [1], [2, 3]] output_shape [1, 128, 12, 64] : tensor<1x128x768xf32> into tensor<1x128x12x64xf32>
+    %44 = bufferization.to_memref %expanded_83 : tensor<1x128x12x64xf32> to memref<1x128x12x64xf32>
     %alloc_84 = memref.alloc() {alignment = 64 : i64} : memref<768x768xf32>
     affine.for %arg3 = 0 to 768 {
       affine.for %arg4 = 0 to 768 {
@@ -555,9 +524,9 @@ module {
         }
       }
     }
-    %45 = bufferization.to_tensor %alloc_87 : memref<1x128x768xf32>
-    %expanded_88 = tensor.expand_shape %45 [[0], [1], [2, 3]] : tensor<1x128x768xf32> into tensor<1x128x12x64xf32>
-    %46 = bufferization.to_memref %expanded_88 : memref<1x128x12x64xf32>
+    %45 = bufferization.to_tensor %alloc_87 : memref<1x128x768xf32> to tensor<1x128x768xf32>
+    %expanded_88 = tensor.expand_shape %45 [[0], [1], [2, 3]] output_shape [1, 128, 12, 64] : tensor<1x128x768xf32> into tensor<1x128x12x64xf32>
+    %46 = bufferization.to_memref %expanded_88 : tensor<1x128x12x64xf32> to memref<1x128x12x64xf32>
     %alloc_89 = memref.alloc() {alignment = 64 : i64} : memref<1x12x128x64xf32>
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
@@ -591,7 +560,7 @@ module {
         }
       }
     }
-    %47 = bufferization.to_tensor %alloc_91 : memref<1x12x128x64xf32>
+    %47 = bufferization.to_tensor %alloc_91 : memref<1x12x128x64xf32> to tensor<1x12x128x64xf32>
     %alloc_92 = memref.alloc() {alignment = 64 : i64} : memref<1x12x64x128xf32>
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 12 {
@@ -603,11 +572,11 @@ module {
         }
       }
     }
-    %48 = bufferization.to_tensor %alloc_92 : memref<1x12x64x128xf32>
+    %48 = bufferization.to_tensor %alloc_92 : memref<1x12x64x128xf32> to tensor<1x12x64x128xf32>
     %collapsed_93 = tensor.collapse_shape %47 [[0, 1], [2], [3]] : tensor<1x12x128x64xf32> into tensor<12x128x64xf32>
-    %49 = bufferization.to_memref %collapsed_93 : memref<12x128x64xf32>
+    %49 = bufferization.to_memref %collapsed_93 : tensor<12x128x64xf32> to memref<12x128x64xf32>
     %collapsed_94 = tensor.collapse_shape %48 [[0, 1], [2], [3]] : tensor<1x12x64x128xf32> into tensor<12x64x128xf32>
-    %50 = bufferization.to_memref %collapsed_94 : memref<12x64x128xf32>
+    %50 = bufferization.to_memref %collapsed_94 : tensor<12x64x128xf32> to memref<12x64x128xf32>
     %alloc_95 = memref.alloc() {alignment = 64 : i64} : memref<12x128x128xf32>
     affine.for %arg3 = 0 to 12 {
       affine.for %arg4 = 0 to 128 {
@@ -632,9 +601,9 @@ module {
         }
       }
     }
-    %51 = bufferization.to_tensor %alloc_96 : memref<12x128x128xf32>
-    %expanded_97 = tensor.expand_shape %51 [[0, 1], [2], [3]] : tensor<12x128x128xf32> into tensor<1x12x128x128xf32>
-    %52 = bufferization.to_memref %expanded_97 : memref<1x12x128x128xf32>
+    %51 = bufferization.to_tensor %alloc_96 : memref<12x128x128xf32> to tensor<12x128x128xf32>
+    %expanded_97 = tensor.expand_shape %51 [[0, 1], [2], [3]] output_shape [1, 12, 128, 128] : tensor<12x128x128xf32> into tensor<1x12x128x128xf32>
+    %52 = bufferization.to_memref %expanded_97 : tensor<1x12x128x128xf32> to memref<1x12x128x128xf32>
     %alloc_98 = memref.alloc() {alignment = 64 : i64} : memref<1x12x128x128xf32>
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 12 {
@@ -715,9 +684,9 @@ module {
         }
       }
     }
-    %55 = bufferization.to_tensor %alloc_104 : memref<1x12x128xf32>
-    %expanded_106 = tensor.expand_shape %55 [[0], [1], [2, 3]] : tensor<1x12x128xf32> into tensor<1x12x128x1xf32>
-    %56 = bufferization.to_memref %expanded_106 : memref<1x12x128x1xf32>
+    %55 = bufferization.to_tensor %alloc_104 : memref<1x12x128xf32> to tensor<1x12x128xf32>
+    %expanded_106 = tensor.expand_shape %55 [[0], [1], [2, 3]] output_shape [1, 12, 128, 1] : tensor<1x12x128xf32> into tensor<1x12x128x1xf32>
+    %56 = bufferization.to_memref %expanded_106 : tensor<1x12x128x1xf32> to memref<1x12x128x1xf32>
     %alloc_107 = memref.alloc() {alignment = 64 : i64} : memref<1x12x128x128xf32>
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 12 {
@@ -791,7 +760,7 @@ module {
         }
       }
     }
-    %57 = bufferization.to_tensor %alloc_112 : memref<1x12x128x128xf32>
+    %57 = bufferization.to_tensor %alloc_112 : memref<1x12x128x128xf32> to tensor<1x12x128x128xf32>
     %alloc_113 = memref.alloc() {alignment = 64 : i64} : memref<1x12x128x64xf32>
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 12 {
@@ -803,11 +772,11 @@ module {
         }
       }
     }
-    %58 = bufferization.to_tensor %alloc_113 : memref<1x12x128x64xf32>
+    %58 = bufferization.to_tensor %alloc_113 : memref<1x12x128x64xf32> to tensor<1x12x128x64xf32>
     %collapsed_114 = tensor.collapse_shape %57 [[0, 1], [2], [3]] : tensor<1x12x128x128xf32> into tensor<12x128x128xf32>
-    %59 = bufferization.to_memref %collapsed_114 : memref<12x128x128xf32>
+    %59 = bufferization.to_memref %collapsed_114 : tensor<12x128x128xf32> to memref<12x128x128xf32>
     %collapsed_115 = tensor.collapse_shape %58 [[0, 1], [2], [3]] : tensor<1x12x128x64xf32> into tensor<12x128x64xf32>
-    %60 = bufferization.to_memref %collapsed_115 : memref<12x128x64xf32>
+    %60 = bufferization.to_memref %collapsed_115 : tensor<12x128x64xf32> to memref<12x128x64xf32>
     %alloc_116 = memref.alloc() {alignment = 64 : i64} : memref<12x128x64xf32>
     affine.for %arg3 = 0 to 12 {
       affine.for %arg4 = 0 to 128 {
@@ -832,9 +801,9 @@ module {
         }
       }
     }
-    %61 = bufferization.to_tensor %alloc_117 : memref<12x128x64xf32>
-    %expanded_118 = tensor.expand_shape %61 [[0, 1], [2], [3]] : tensor<12x128x64xf32> into tensor<1x12x128x64xf32>
-    %62 = bufferization.to_memref %expanded_118 : memref<1x12x128x64xf32>
+    %61 = bufferization.to_tensor %alloc_117 : memref<12x128x64xf32> to tensor<12x128x64xf32>
+    %expanded_118 = tensor.expand_shape %61 [[0, 1], [2], [3]] output_shape [1, 12, 128, 64] : tensor<12x128x64xf32> into tensor<1x12x128x64xf32>
+    %62 = bufferization.to_memref %expanded_118 : tensor<1x12x128x64xf32> to memref<1x12x128x64xf32>
     %alloc_119 = memref.alloc() {alignment = 64 : i64} : memref<1x128x12x64xf32>
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 12 {
@@ -846,9 +815,9 @@ module {
         }
       }
     }
-    %63 = bufferization.to_tensor %alloc_119 : memref<1x128x12x64xf32>
+    %63 = bufferization.to_tensor %alloc_119 : memref<1x128x12x64xf32> to tensor<1x128x12x64xf32>
     %collapsed_120 = tensor.collapse_shape %63 [[0], [1], [2, 3]] : tensor<1x128x12x64xf32> into tensor<1x128x768xf32>
-    %64 = bufferization.to_memref %collapsed_120 : memref<1x128x768xf32>
+    %64 = bufferization.to_memref %collapsed_120 : tensor<1x128x768xf32> to memref<1x128x768xf32>
     %alloc_121 = memref.alloc() {alignment = 64 : i64} : memref<768x768xf32>
     affine.for %arg3 = 0 to 768 {
       affine.for %arg4 = 0 to 768 {
@@ -1517,9 +1486,9 @@ module {
         }
       }
     }
-    %65 = bufferization.to_tensor %alloc_183 : memref<1x128x768xf32>
-    %expanded_184 = tensor.expand_shape %65 [[0], [1], [2, 3]] : tensor<1x128x768xf32> into tensor<1x128x12x64xf32>
-    %66 = bufferization.to_memref %expanded_184 : memref<1x128x12x64xf32>
+    %65 = bufferization.to_tensor %alloc_183 : memref<1x128x768xf32> to tensor<1x128x768xf32>
+    %expanded_184 = tensor.expand_shape %65 [[0], [1], [2, 3]] output_shape [1, 128, 12, 64] : tensor<1x128x768xf32> into tensor<1x128x12x64xf32>
+    %66 = bufferization.to_memref %expanded_184 : tensor<1x128x12x64xf32> to memref<1x128x12x64xf32>
     %alloc_185 = memref.alloc() {alignment = 64 : i64} : memref<1x12x128x64xf32>
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
@@ -1574,9 +1543,9 @@ module {
         }
       }
     }
-    %67 = bufferization.to_tensor %alloc_189 : memref<1x128x768xf32>
-    %expanded_190 = tensor.expand_shape %67 [[0], [1], [2, 3]] : tensor<1x128x768xf32> into tensor<1x128x12x64xf32>
-    %68 = bufferization.to_memref %expanded_190 : memref<1x128x12x64xf32>
+    %67 = bufferization.to_tensor %alloc_189 : memref<1x128x768xf32> to tensor<1x128x768xf32>
+    %expanded_190 = tensor.expand_shape %67 [[0], [1], [2, 3]] output_shape [1, 128, 12, 64] : tensor<1x128x768xf32> into tensor<1x128x12x64xf32>
+    %68 = bufferization.to_memref %expanded_190 : tensor<1x128x12x64xf32> to memref<1x128x12x64xf32>
     %alloc_191 = memref.alloc() {alignment = 64 : i64} : memref<768x768xf32>
     affine.for %arg3 = 0 to 768 {
       affine.for %arg4 = 0 to 768 {
@@ -1620,9 +1589,9 @@ module {
         }
       }
     }
-    %69 = bufferization.to_tensor %alloc_194 : memref<1x128x768xf32>
-    %expanded_195 = tensor.expand_shape %69 [[0], [1], [2, 3]] : tensor<1x128x768xf32> into tensor<1x128x12x64xf32>
-    %70 = bufferization.to_memref %expanded_195 : memref<1x128x12x64xf32>
+    %69 = bufferization.to_tensor %alloc_194 : memref<1x128x768xf32> to tensor<1x128x768xf32>
+    %expanded_195 = tensor.expand_shape %69 [[0], [1], [2, 3]] output_shape [1, 128, 12, 64] : tensor<1x128x768xf32> into tensor<1x128x12x64xf32>
+    %70 = bufferization.to_memref %expanded_195 : tensor<1x128x12x64xf32> to memref<1x128x12x64xf32>
     %alloc_196 = memref.alloc() {alignment = 64 : i64} : memref<1x12x128x64xf32>
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 128 {
@@ -1656,7 +1625,7 @@ module {
         }
       }
     }
-    %71 = bufferization.to_tensor %alloc_198 : memref<1x12x128x64xf32>
+    %71 = bufferization.to_tensor %alloc_198 : memref<1x12x128x64xf32> to tensor<1x12x128x64xf32>
     %alloc_199 = memref.alloc() {alignment = 64 : i64} : memref<1x12x64x128xf32>
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 12 {
@@ -1668,11 +1637,11 @@ module {
         }
       }
     }
-    %72 = bufferization.to_tensor %alloc_199 : memref<1x12x64x128xf32>
+    %72 = bufferization.to_tensor %alloc_199 : memref<1x12x64x128xf32> to tensor<1x12x64x128xf32>
     %collapsed_200 = tensor.collapse_shape %71 [[0, 1], [2], [3]] : tensor<1x12x128x64xf32> into tensor<12x128x64xf32>
-    %73 = bufferization.to_memref %collapsed_200 : memref<12x128x64xf32>
+    %73 = bufferization.to_memref %collapsed_200 : tensor<12x128x64xf32> to memref<12x128x64xf32>
     %collapsed_201 = tensor.collapse_shape %72 [[0, 1], [2], [3]] : tensor<1x12x64x128xf32> into tensor<12x64x128xf32>
-    %74 = bufferization.to_memref %collapsed_201 : memref<12x64x128xf32>
+    %74 = bufferization.to_memref %collapsed_201 : tensor<12x64x128xf32> to memref<12x64x128xf32>
     %alloc_202 = memref.alloc() {alignment = 64 : i64} : memref<12x128x128xf32>
     memref.copy %alloc_95, %alloc_202 : memref<12x128x128xf32> to memref<12x128x128xf32>
     affine.for %arg3 = 0 to 12 {
@@ -1689,9 +1658,9 @@ module {
         }
       }
     }
-    %75 = bufferization.to_tensor %alloc_202 : memref<12x128x128xf32>
-    %expanded_203 = tensor.expand_shape %75 [[0, 1], [2], [3]] : tensor<12x128x128xf32> into tensor<1x12x128x128xf32>
-    %76 = bufferization.to_memref %expanded_203 : memref<1x12x128x128xf32>
+    %75 = bufferization.to_tensor %alloc_202 : memref<12x128x128xf32> to tensor<12x128x128xf32>
+    %expanded_203 = tensor.expand_shape %75 [[0, 1], [2], [3]] output_shape [1, 12, 128, 128] : tensor<12x128x128xf32> into tensor<1x12x128x128xf32>
+    %76 = bufferization.to_memref %expanded_203 : tensor<1x12x128x128xf32> to memref<1x12x128x128xf32>
     %alloc_204 = memref.alloc() {alignment = 64 : i64} : memref<1x12x128x128xf32>
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 12 {
@@ -1739,9 +1708,9 @@ module {
         }
       }
     }
-    %77 = bufferization.to_tensor %alloc_206 : memref<1x12x128xf32>
-    %expanded_208 = tensor.expand_shape %77 [[0], [1], [2, 3]] : tensor<1x12x128xf32> into tensor<1x12x128x1xf32>
-    %78 = bufferization.to_memref %expanded_208 : memref<1x12x128x1xf32>
+    %77 = bufferization.to_tensor %alloc_206 : memref<1x12x128xf32> to tensor<1x12x128xf32>
+    %expanded_208 = tensor.expand_shape %77 [[0], [1], [2, 3]] output_shape [1, 12, 128, 1] : tensor<1x12x128xf32> into tensor<1x12x128x1xf32>
+    %78 = bufferization.to_memref %expanded_208 : tensor<1x12x128x1xf32> to memref<1x12x128x1xf32>
     %alloc_209 = memref.alloc() {alignment = 64 : i64} : memref<1x12x128x128xf32>
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 12 {
@@ -1805,7 +1774,7 @@ module {
         }
       }
     }
-    %79 = bufferization.to_tensor %alloc_213 : memref<1x12x128x128xf32>
+    %79 = bufferization.to_tensor %alloc_213 : memref<1x12x128x128xf32> to tensor<1x12x128x128xf32>
     %alloc_214 = memref.alloc() {alignment = 64 : i64} : memref<1x12x128x64xf32>
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 12 {
@@ -1817,11 +1786,11 @@ module {
         }
       }
     }
-    %80 = bufferization.to_tensor %alloc_214 : memref<1x12x128x64xf32>
+    %80 = bufferization.to_tensor %alloc_214 : memref<1x12x128x64xf32> to tensor<1x12x128x64xf32>
     %collapsed_215 = tensor.collapse_shape %79 [[0, 1], [2], [3]] : tensor<1x12x128x128xf32> into tensor<12x128x128xf32>
-    %81 = bufferization.to_memref %collapsed_215 : memref<12x128x128xf32>
+    %81 = bufferization.to_memref %collapsed_215 : tensor<12x128x128xf32> to memref<12x128x128xf32>
     %collapsed_216 = tensor.collapse_shape %80 [[0, 1], [2], [3]] : tensor<1x12x128x64xf32> into tensor<12x128x64xf32>
-    %82 = bufferization.to_memref %collapsed_216 : memref<12x128x64xf32>
+    %82 = bufferization.to_memref %collapsed_216 : tensor<12x128x64xf32> to memref<12x128x64xf32>
     %alloc_217 = memref.alloc() {alignment = 64 : i64} : memref<12x128x64xf32>
     memref.copy %alloc_116, %alloc_217 : memref<12x128x64xf32> to memref<12x128x64xf32>
     affine.for %arg3 = 0 to 12 {
@@ -1838,9 +1807,9 @@ module {
         }
       }
     }
-    %83 = bufferization.to_tensor %alloc_217 : memref<12x128x64xf32>
-    %expanded_218 = tensor.expand_shape %83 [[0, 1], [2], [3]] : tensor<12x128x64xf32> into tensor<1x12x128x64xf32>
-    %84 = bufferization.to_memref %expanded_218 : memref<1x12x128x64xf32>
+    %83 = bufferization.to_tensor %alloc_217 : memref<12x128x64xf32> to tensor<12x128x64xf32>
+    %expanded_218 = tensor.expand_shape %83 [[0, 1], [2], [3]] output_shape [1, 12, 128, 64] : tensor<12x128x64xf32> into tensor<1x12x128x64xf32>
+    %84 = bufferization.to_memref %expanded_218 : tensor<1x12x128x64xf32> to memref<1x12x128x64xf32>
     %alloc_219 = memref.alloc() {alignment = 64 : i64} : memref<1x128x12x64xf32>
     affine.for %arg3 = 0 to 1 {
       affine.for %arg4 = 0 to 12 {
@@ -1852,9 +1821,9 @@ module {
         }
       }
     }
-    %85 = bufferization.to_tensor %alloc_219 : memref<1x128x12x64xf32>
+    %85 = bufferization.to_tensor %alloc_219 : memref<1x128x12x64xf32> to tensor<1x128x12x64xf32>
     %collapsed_220 = tensor.collapse_shape %85 [[0], [1], [2, 3]] : tensor<1x128x12x64xf32> into tensor<1x128x768xf32>
-    %86 = bufferization.to_memref %collapsed_220 : memref<1x128x768xf32>
+    %86 = bufferization.to_memref %collapsed_220 : tensor<1x128x768xf32> to memref<1x128x768xf32>
     %alloc_221 = memref.alloc() {alignment = 64 : i64} : memref<768x768xf32>
     affine.for %arg3 = 0 to 768 {
       affine.for %arg4 = 0 to 768 {
@@ -2290,8 +2259,7 @@ module {
         }
       }
     }
-    %87 = bufferization.to_tensor %alloc_261 : memref<1x128x768xf32>
+    %87 = bufferization.to_tensor %alloc_261 : memref<1x128x768xf32> to tensor<1x128x768xf32>
     return %87 : tensor<1x128x768xf32>
   }
 }
-
