@@ -1,0 +1,153 @@
+[mlir-neura-opt] No architecture specification file provided, using default configuration
+--------------------------------------------------
+Static Features Extracted & Annotated
+--------------------------------------------------
+==================================================================
+Task Analysis: Analyzing & Annotating IR for main
+==================================================================
+Found 20 tasks and 13 dependencies.
+
+[DOT Graph Visualization]
+digraph TaskGraph {
+  rankdir=TB;
+  node [shape=box, style=filled, fillcolor=white];
+  Task0 [label="Task 0"];
+  Task1 [label="Task 1"];
+  Task2 [label="Task 2"];
+  Task3 [label="Task 3"];
+  Task4 [label="Task 4"];
+  Task5 [label="Task 5"];
+  Task6 [label="Task 6"];
+  Task7 [label="Task 7"];
+  Task8 [label="Task 8"];
+  Task9 [label="Task 9"];
+  Task10 [label="Task 10"];
+  Task11 [label="Task 11"];
+  Task12 [label="Task 12"];
+  Task13 [label="Task 13"];
+  Task14 [label="Task 14"];
+  Task15 [label="Task 15"];
+  Task16 [label="Task 16"];
+  Task17 [label="Task 17"];
+  Task18 [label="Task 18"];
+  Task19 [label="Task 19"];
+  Task1 -> Task2 [color="#006400", penwidth=2.0, label="Flow"];
+  Task2 -> Task4 [color="#006400", penwidth=2.0, label="Flow"];
+  Task4 -> Task5 [color="#006400", penwidth=2.0, label="Flow"];
+  Task6 -> Task8 [color="#006400", penwidth=2.0, label="Flow"];
+  Task8 -> Task9 [color="#006400", penwidth=2.0, label="Flow"];
+  Task9 -> Task10 [color="#006400", penwidth=2.0, label="Flow"];
+  Task10 -> Task13 [color="#006400", penwidth=2.0, label="Flow"];
+  Task11 -> Task13 [color="#006400", penwidth=2.0, label="Flow"];
+  Task13 -> Task14 [color="#006400", penwidth=2.0, label="Flow"];
+  Task14 -> Task15 [color="#006400", penwidth=2.0, label="Flow"];
+  Task15 -> Task18 [color="#006400", penwidth=2.0, label="Flow"];
+  Task16 -> Task18 [color="#006400", penwidth=2.0, label="Flow"];
+  Task18 -> Task19 [color="#006400", penwidth=2.0, label="Flow"];
+}
+
+=== Profit-Based Spatial Orchestration (Resource Complementarity) ===
+MaxFusionSize=1
+
+--- Time Step 0 ---
+  Block 1 (Ops: 39, Score: 0.92) -> Placed at (0, 0)
+  Block 6 (Ops: 23, Score: 0.11) -> Placed at (1, 0)
+  Block 0 (Ops: 26, Score: 0.11) -> Placed at (2, 0)
+  Block 3 (Ops: 26, Score: 0.11) -> Placed at (3, 0)
+  Block 11 (Ops: 23, Score: 0.07) -> Placed at (0, 1)
+  Block 7 (Ops: 22, Score: 0.05) -> Placed at (1, 1)
+  Block 12 (Ops: 22, Score: 0.05) -> Placed at (2, 1)
+  Block 17 (Ops: 22, Score: 0.05) -> Placed at (3, 1)
+  Block 16 (Ops: 23, Score: 0.05) -> Placed at (0, 2)
+Step Latency: 39
+
+--- Time Step 1 ---
+  Block 2 (Ops: 29, Score: 1.14) -> Placed at (0, 0)
+  Block 8 (Ops: 29, Score: 0.81) -> Placed at (1, 0)
+Step Latency: 29
+
+--- Time Step 2 ---
+  Block 4 (Ops: 39, Score: 0.90) -> Placed at (0, 0)
+  Block 9 (Ops: 25, Score: 0.17) -> Placed at (1, 0)
+Step Latency: 39
+
+--- Time Step 3 ---
+  Block 5 (Ops: 29, Score: 1.10) -> Placed at (0, 0)
+  Block 10 (Ops: 25, Score: 0.50) -> Placed at (1, 0)
+Step Latency: 29
+
+--- Time Step 4 ---
+  Block 13 (Ops: 29, Score: 0.54) -> Placed at (0, 0)
+Step Latency: 29
+
+--- Time Step 5 ---
+  Block 14 (Ops: 25, Score: 0.17) -> Placed at (0, 0)
+Step Latency: 25
+
+--- Time Step 6 ---
+  Block 15 (Ops: 25, Score: 0.50) -> Placed at (0, 0)
+Step Latency: 25
+
+--- Time Step 7 ---
+  Block 18 (Ops: 29, Score: 0.46) -> Placed at (0, 0)
+Step Latency: 29
+
+--- Time Step 8 ---
+  Block 19 (Ops: 25, Score: 0.17) -> Placed at (0, 0)
+Step Latency: 25
+
+[RESULT] TimeSteps=9 Blocks=20 Latency=269 Failed=0
+==========================================
+=== Negotiated Routing (PathFinder) ===
+Identified 3 inter-tile nets.
+Iter 0: 1 overflow links.
+Iter 1: 1 overflow links.
+Iter 2: 1 overflow links.
+Iter 3: 1 overflow links.
+Iter 4: 1 overflow links.
+Iter 5: 1 overflow links.
+Iter 6: 1 overflow links.
+Iter 7: 1 overflow links.
+Iter 8: 1 overflow links.
+Iter 9: 1 overflow links.
+Iter 10: 1 overflow links.
+Iter 11: 1 overflow links.
+Iter 12: 1 overflow links.
+Iter 13: 1 overflow links.
+Iter 14: 1 overflow links.
+Iter 15: 1 overflow links.
+Iter 16: 1 overflow links.
+Iter 17: 1 overflow links.
+Iter 18: 1 overflow links.
+Iter 19: 1 overflow links.
+Iter 20: 1 overflow links.
+Iter 21: 1 overflow links.
+Iter 22: 1 overflow links.
+Iter 23: 1 overflow links.
+Iter 24: 1 overflow links.
+Iter 25: 1 overflow links.
+Iter 26: 1 overflow links.
+Iter 27: 1 overflow links.
+Iter 28: 1 overflow links.
+Iter 29: 1 overflow links.
+Iter 30: 1 overflow links.
+Iter 31: 1 overflow links.
+Iter 32: 1 overflow links.
+Iter 33: 1 overflow links.
+Iter 34: 1 overflow links.
+Iter 35: 1 overflow links.
+Iter 36: 1 overflow links.
+Iter 37: 1 overflow links.
+Iter 38: 1 overflow links.
+Iter 39: 1 overflow links.
+Iter 40: 1 overflow links.
+Iter 41: 1 overflow links.
+Iter 42: 1 overflow links.
+Iter 43: 1 overflow links.
+Iter 44: 1 overflow links.
+Iter 45: 1 overflow links.
+Iter 46: 1 overflow links.
+Routing converged at iter 47!
+Net 10->13: (1,0)->(0,0)
+Net 11->13: (0,0)
+Net 16->18: (0,2)->(0,1)->(0,0)

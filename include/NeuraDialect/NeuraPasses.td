@@ -160,4 +160,18 @@ def ProfitBasedSpatialOrchestration : Pass<"spatial-orchestration", "func::FuncO
   let summary = "Map tasks based on profit model";
   let constructor = "mlir::neura::createProfitBasedSpatialOrchestrationPass()";
 }
+def NegotiatedRouting : Pass<"negotiated-routing", "func::FuncOp"> {
+  let summary = "Congestion-aware negotiated routing";
+  let description = [{
+    Performs pathfinding for data dependencies using a negotiation-based A* algorithm
+    to resolve network congestion.
+  }];
+  let constructor = "mlir::neura::createNegotiatedRoutingPass()";
+  let options = [
+    Option<"optMaxIter", "max-iter", "int", /*default=*/"30", "Maximum negotiation iterations">,
+    Option<"optChipW", "width", "int", /*default=*/"8", "Chip width">,
+    Option<"optChipH", "height", "int", /*default=*/"8", "Chip height">
+  ];
+  let dependentDialects = ["affine::AffineDialect"];
+}
 #endif // NEURA_PASSES_TD

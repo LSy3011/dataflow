@@ -1,0 +1,934 @@
+[mlir-neura-opt] No architecture specification file provided, using default configuration
+--------------------------------------------------
+Static Features Extracted & Annotated
+--------------------------------------------------
+==================================================================
+Task Analysis: Analyzing & Annotating IR for main
+==================================================================
+Found 190 tasks and 185 dependencies.
+
+[DOT Graph Visualization]
+digraph TaskGraph {
+  rankdir=TB;
+  node [shape=box, style=filled, fillcolor=white];
+  Task0 [label="Task 0"];
+  Task1 [label="Task 1"];
+  Task2 [label="Task 2"];
+  Task3 [label="Task 3"];
+  Task4 [label="Task 4"];
+  Task5 [label="Task 5"];
+  Task6 [label="Task 6"];
+  Task7 [label="Task 7"];
+  Task8 [label="Task 8"];
+  Task9 [label="Task 9"];
+  Task10 [label="Task 10"];
+  Task11 [label="Task 11"];
+  Task12 [label="Task 12"];
+  Task13 [label="Task 13"];
+  Task14 [label="Task 14"];
+  Task15 [label="Task 15"];
+  Task16 [label="Task 16"];
+  Task17 [label="Task 17"];
+  Task18 [label="Task 18"];
+  Task19 [label="Task 19"];
+  Task20 [label="Task 20"];
+  Task21 [label="Task 21"];
+  Task22 [label="Task 22"];
+  Task23 [label="Task 23"];
+  Task24 [label="Task 24"];
+  Task25 [label="Task 25"];
+  Task26 [label="Task 26"];
+  Task27 [label="Task 27"];
+  Task28 [label="Task 28"];
+  Task29 [label="Task 29"];
+  Task30 [label="Task 30"];
+  Task31 [label="Task 31"];
+  Task32 [label="Task 32"];
+  Task33 [label="Task 33"];
+  Task34 [label="Task 34"];
+  Task35 [label="Task 35"];
+  Task36 [label="Task 36"];
+  Task37 [label="Task 37"];
+  Task38 [label="Task 38"];
+  Task39 [label="Task 39"];
+  Task40 [label="Task 40"];
+  Task41 [label="Task 41"];
+  Task42 [label="Task 42"];
+  Task43 [label="Task 43"];
+  Task44 [label="Task 44"];
+  Task45 [label="Task 45"];
+  Task46 [label="Task 46"];
+  Task47 [label="Task 47"];
+  Task48 [label="Task 48"];
+  Task49 [label="Task 49"];
+  Task50 [label="Task 50"];
+  Task51 [label="Task 51"];
+  Task52 [label="Task 52"];
+  Task53 [label="Task 53"];
+  Task54 [label="Task 54"];
+  Task55 [label="Task 55"];
+  Task56 [label="Task 56"];
+  Task57 [label="Task 57"];
+  Task58 [label="Task 58"];
+  Task59 [label="Task 59"];
+  Task60 [label="Task 60"];
+  Task61 [label="Task 61"];
+  Task62 [label="Task 62"];
+  Task63 [label="Task 63"];
+  Task64 [label="Task 64"];
+  Task65 [label="Task 65"];
+  Task66 [label="Task 66"];
+  Task67 [label="Task 67"];
+  Task68 [label="Task 68"];
+  Task69 [label="Task 69"];
+  Task70 [label="Task 70"];
+  Task71 [label="Task 71"];
+  Task72 [label="Task 72"];
+  Task73 [label="Task 73"];
+  Task74 [label="Task 74"];
+  Task75 [label="Task 75"];
+  Task76 [label="Task 76"];
+  Task77 [label="Task 77"];
+  Task78 [label="Task 78"];
+  Task79 [label="Task 79"];
+  Task80 [label="Task 80"];
+  Task81 [label="Task 81"];
+  Task82 [label="Task 82"];
+  Task83 [label="Task 83"];
+  Task84 [label="Task 84"];
+  Task85 [label="Task 85"];
+  Task86 [label="Task 86"];
+  Task87 [label="Task 87"];
+  Task88 [label="Task 88"];
+  Task89 [label="Task 89"];
+  Task90 [label="Task 90"];
+  Task91 [label="Task 91"];
+  Task92 [label="Task 92"];
+  Task93 [label="Task 93"];
+  Task94 [label="Task 94"];
+  Task95 [label="Task 95"];
+  Task96 [label="Task 96"];
+  Task97 [label="Task 97"];
+  Task98 [label="Task 98"];
+  Task99 [label="Task 99"];
+  Task100 [label="Task 100"];
+  Task101 [label="Task 101"];
+  Task102 [label="Task 102"];
+  Task103 [label="Task 103"];
+  Task104 [label="Task 104"];
+  Task105 [label="Task 105"];
+  Task106 [label="Task 106"];
+  Task107 [label="Task 107"];
+  Task108 [label="Task 108"];
+  Task109 [label="Task 109"];
+  Task110 [label="Task 110"];
+  Task111 [label="Task 111"];
+  Task112 [label="Task 112"];
+  Task113 [label="Task 113"];
+  Task114 [label="Task 114"];
+  Task115 [label="Task 115"];
+  Task116 [label="Task 116"];
+  Task117 [label="Task 117"];
+  Task118 [label="Task 118"];
+  Task119 [label="Task 119"];
+  Task120 [label="Task 120"];
+  Task121 [label="Task 121"];
+  Task122 [label="Task 122"];
+  Task123 [label="Task 123"];
+  Task124 [label="Task 124"];
+  Task125 [label="Task 125"];
+  Task126 [label="Task 126"];
+  Task127 [label="Task 127"];
+  Task128 [label="Task 128"];
+  Task129 [label="Task 129"];
+  Task130 [label="Task 130"];
+  Task131 [label="Task 131"];
+  Task132 [label="Task 132"];
+  Task133 [label="Task 133"];
+  Task134 [label="Task 134"];
+  Task135 [label="Task 135"];
+  Task136 [label="Task 136"];
+  Task137 [label="Task 137"];
+  Task138 [label="Task 138"];
+  Task139 [label="Task 139"];
+  Task140 [label="Task 140"];
+  Task141 [label="Task 141"];
+  Task142 [label="Task 142"];
+  Task143 [label="Task 143"];
+  Task144 [label="Task 144"];
+  Task145 [label="Task 145"];
+  Task146 [label="Task 146"];
+  Task147 [label="Task 147"];
+  Task148 [label="Task 148"];
+  Task149 [label="Task 149"];
+  Task150 [label="Task 150"];
+  Task151 [label="Task 151"];
+  Task152 [label="Task 152"];
+  Task153 [label="Task 153"];
+  Task154 [label="Task 154"];
+  Task155 [label="Task 155"];
+  Task156 [label="Task 156"];
+  Task157 [label="Task 157"];
+  Task158 [label="Task 158"];
+  Task159 [label="Task 159"];
+  Task160 [label="Task 160"];
+  Task161 [label="Task 161"];
+  Task162 [label="Task 162"];
+  Task163 [label="Task 163"];
+  Task164 [label="Task 164"];
+  Task165 [label="Task 165"];
+  Task166 [label="Task 166"];
+  Task167 [label="Task 167"];
+  Task168 [label="Task 168"];
+  Task169 [label="Task 169"];
+  Task170 [label="Task 170"];
+  Task171 [label="Task 171"];
+  Task172 [label="Task 172"];
+  Task173 [label="Task 173"];
+  Task174 [label="Task 174"];
+  Task175 [label="Task 175"];
+  Task176 [label="Task 176"];
+  Task177 [label="Task 177"];
+  Task178 [label="Task 178"];
+  Task179 [label="Task 179"];
+  Task180 [label="Task 180"];
+  Task181 [label="Task 181"];
+  Task182 [label="Task 182"];
+  Task183 [label="Task 183"];
+  Task184 [label="Task 184"];
+  Task185 [label="Task 185"];
+  Task186 [label="Task 186"];
+  Task187 [label="Task 187"];
+  Task188 [label="Task 188"];
+  Task189 [label="Task 189"];
+  Task2 -> Task3 [color="#006400", penwidth=2.0, label="Flow"];
+  Task3 -> Task5 [color="#006400", penwidth=2.0, label="Flow"];
+  Task4 -> Task5 [color="#006400", penwidth=2.0, label="Flow"];
+  Task5 -> Task7 [color="#006400", penwidth=2.0, label="Flow"];
+  Task5 -> Task9 [color="#006400", penwidth=2.0, label="Flow"];
+  Task5 -> Task19 [color="#006400", penwidth=2.0, label="Flow"];
+  Task5 -> Task66 [color="#006400", penwidth=2.0, label="Flow"];
+  Task7 -> Task8 [color="#006400", penwidth=2.0, label="Flow"];
+  Task8 -> Task19 [color="#006400", penwidth=2.0, label="Flow"];
+  Task9 -> Task11 [color="#006400", penwidth=2.0, label="Flow"];
+  Task9 -> Task13 [color="#006400", penwidth=2.0, label="Flow"];
+  Task11 -> Task12 [color="#006400", penwidth=2.0, label="Flow"];
+  Task12 -> Task13 [color="#006400", penwidth=2.0, label="Flow"];
+  Task13 -> Task14 [color="#006400", penwidth=2.0, label="Flow"];
+  Task14 -> Task15 [color="#006400", penwidth=2.0, label="Flow"];
+  Task15 -> Task16 [color="#006400", penwidth=2.0, label="Flow"];
+  Task16 -> Task17 [color="#006400", penwidth=2.0, label="Flow"];
+  Task17 -> Task18 [color="#006400", penwidth=2.0, label="Flow"];
+  Task18 -> Task21 [color="#006400", penwidth=2.0, label="Flow"];
+  Task19 -> Task20 [color="#006400", penwidth=2.0, label="Flow"];
+  Task20 -> Task22 [color="#006400", penwidth=2.0, label="Flow"];
+  Task21 -> Task22 [color="#006400", penwidth=2.0, label="Flow"];
+  Task22 -> Task23 [color="#006400", penwidth=2.0, label="Flow"];
+  Task23 -> Task25 [color="#006400", penwidth=2.0, label="Flow"];
+  Task24 -> Task26 [color="#006400", penwidth=2.0, label="Flow"];
+  Task25 -> Task28 [color="#006400", penwidth=2.0, label="Flow"];
+  Task25 -> Task33 [color="#006400", penwidth=2.0, label="Flow"];
+  Task25 -> Task37 [color="#006400", penwidth=2.0, label="Flow"];
+  Task26 -> Task28 [color="#006400", penwidth=2.0, label="Flow"];
+  Task28 -> Task29 [color="#006400", penwidth=2.0, label="Flow"];
+  Task30 -> Task41 [color="#006400", penwidth=2.0, label="Flow"];
+  Task31 -> Task32 [color="#006400", penwidth=2.0, label="Flow"];
+  Task32 -> Task33 [color="#006400", penwidth=2.0, label="Flow"];
+  Task33 -> Task34 [color="#006400", penwidth=2.0, label="Flow"];
+  Task35 -> Task36 [color="#006400", penwidth=2.0, label="Flow"];
+  Task36 -> Task37 [color="#006400", penwidth=2.0, label="Flow"];
+  Task37 -> Task38 [color="#006400", penwidth=2.0, label="Flow"];
+  Task39 -> Task57 [color="#006400", penwidth=2.0, label="Flow"];
+  Task40 -> Task42 [color="#006400", penwidth=2.0, label="Flow"];
+  Task45 -> Task47 [color="#006400", penwidth=2.0, label="Flow"];
+  Task46 -> Task47 [color="#006400", penwidth=2.0, label="Flow"];
+  Task46 -> Task139 [color="#006400", penwidth=2.0, label="Flow"];
+  Task47 -> Task50 [color="#006400", penwidth=2.0, label="Flow"];
+  Task47 -> Task51 [color="#006400", penwidth=2.0, label="Flow"];
+  Task51 -> Task52 [color="#006400", penwidth=2.0, label="Flow"];
+  Task52 -> Task54 [color="#006400", penwidth=2.0, label="Flow"];
+  Task52 -> Task55 [color="#006400", penwidth=2.0, label="Flow"];
+  Task54 -> Task55 [color="#006400", penwidth=2.0, label="Flow"];
+  Task55 -> Task56 [color="#006400", penwidth=2.0, label="Flow"];
+  Task61 -> Task63 [color="#006400", penwidth=2.0, label="Flow"];
+  Task62 -> Task64 [color="#006400", penwidth=2.0, label="Flow"];
+  Task63 -> Task64 [color="#006400", penwidth=2.0, label="Flow"];
+  Task64 -> Task65 [color="#006400", penwidth=2.0, label="Flow"];
+  Task65 -> Task66 [color="#006400", penwidth=2.0, label="Flow"];
+  Task66 -> Task67 [color="#006400", penwidth=2.0, label="Flow"];
+  Task66 -> Task69 [color="#006400", penwidth=2.0, label="Flow"];
+  Task66 -> Task78 [color="#006400", penwidth=2.0, label="Flow"];
+  Task66 -> Task102 [color="#006400", penwidth=2.0, label="Flow"];
+  Task67 -> Task68 [color="#006400", penwidth=2.0, label="Flow"];
+  Task68 -> Task78 [color="#006400", penwidth=2.0, label="Flow"];
+  Task69 -> Task70 [color="#006400", penwidth=2.0, label="Flow"];
+  Task69 -> Task72 [color="#006400", penwidth=2.0, label="Flow"];
+  Task70 -> Task71 [color="#006400", penwidth=2.0, label="Flow"];
+  Task71 -> Task72 [color="#006400", penwidth=2.0, label="Flow"];
+  Task72 -> Task73 [color="#006400", penwidth=2.0, label="Flow"];
+  Task73 -> Task74 [color="#006400", penwidth=2.0, label="Flow"];
+  Task74 -> Task75 [color="#006400", penwidth=2.0, label="Flow"];
+  Task75 -> Task76 [color="#006400", penwidth=2.0, label="Flow"];
+  Task76 -> Task77 [color="#006400", penwidth=2.0, label="Flow"];
+  Task77 -> Task80 [color="#006400", penwidth=2.0, label="Flow"];
+  Task78 -> Task79 [color="#006400", penwidth=2.0, label="Flow"];
+  Task79 -> Task81 [color="#006400", penwidth=2.0, label="Flow"];
+  Task80 -> Task81 [color="#006400", penwidth=2.0, label="Flow"];
+  Task81 -> Task82 [color="#006400", penwidth=2.0, label="Flow"];
+  Task82 -> Task84 [color="#006400", penwidth=2.0, label="Flow"];
+  Task83 -> Task85 [color="#006400", penwidth=2.0, label="Flow"];
+  Task84 -> Task87 [color="#006400", penwidth=2.0, label="Flow"];
+  Task85 -> Task87 [color="#006400", penwidth=2.0, label="Flow"];
+  Task87 -> Task88 [color="#006400", penwidth=2.0, label="Flow"];
+  Task88 -> Task89 [color="#006400", penwidth=2.0, label="Flow"];
+  Task88 -> Task90 [color="#006400", penwidth=2.0, label="Flow"];
+  Task88 -> Task92 [color="#006400", penwidth=2.0, label="Flow"];
+  Task89 -> Task96 [color="#006400", penwidth=2.0, label="Flow"];
+  Task90 -> Task91 [color="#006400", penwidth=2.0, label="Flow"];
+  Task91 -> Task92 [color="#006400", penwidth=2.0, label="Flow"];
+  Task92 -> Task93 [color="#006400", penwidth=2.0, label="Flow"];
+  Task93 -> Task94 [color="#006400", penwidth=2.0, label="Flow"];
+  Task94 -> Task95 [color="#006400", penwidth=2.0, label="Flow"];
+  Task95 -> Task96 [color="#006400", penwidth=2.0, label="Flow"];
+  Task96 -> Task98 [color="#006400", penwidth=2.0, label="Flow"];
+  Task97 -> Task99 [color="#006400", penwidth=2.0, label="Flow"];
+  Task98 -> Task100 [color="#006400", penwidth=2.0, label="Flow"];
+  Task99 -> Task100 [color="#006400", penwidth=2.0, label="Flow"];
+  Task100 -> Task101 [color="#006400", penwidth=2.0, label="Flow"];
+  Task101 -> Task102 [color="#006400", penwidth=2.0, label="Flow"];
+  Task102 -> Task103 [color="#006400", penwidth=2.0, label="Flow"];
+  Task102 -> Task105 [color="#006400", penwidth=2.0, label="Flow"];
+  Task102 -> Task114 [color="#006400", penwidth=2.0, label="Flow"];
+  Task102 -> Task154 [color="#006400", penwidth=2.0, label="Flow"];
+  Task103 -> Task104 [color="#006400", penwidth=2.0, label="Flow"];
+  Task104 -> Task114 [color="#006400", penwidth=2.0, label="Flow"];
+  Task105 -> Task106 [color="#006400", penwidth=2.0, label="Flow"];
+  Task105 -> Task108 [color="#006400", penwidth=2.0, label="Flow"];
+  Task106 -> Task107 [color="#006400", penwidth=2.0, label="Flow"];
+  Task107 -> Task108 [color="#006400", penwidth=2.0, label="Flow"];
+  Task108 -> Task109 [color="#006400", penwidth=2.0, label="Flow"];
+  Task109 -> Task110 [color="#006400", penwidth=2.0, label="Flow"];
+  Task110 -> Task111 [color="#006400", penwidth=2.0, label="Flow"];
+  Task111 -> Task112 [color="#006400", penwidth=2.0, label="Flow"];
+  Task112 -> Task113 [color="#006400", penwidth=2.0, label="Flow"];
+  Task113 -> Task116 [color="#006400", penwidth=2.0, label="Flow"];
+  Task114 -> Task115 [color="#006400", penwidth=2.0, label="Flow"];
+  Task115 -> Task117 [color="#006400", penwidth=2.0, label="Flow"];
+  Task116 -> Task117 [color="#006400", penwidth=2.0, label="Flow"];
+  Task117 -> Task118 [color="#006400", penwidth=2.0, label="Flow"];
+  Task118 -> Task120 [color="#006400", penwidth=2.0, label="Flow"];
+  Task119 -> Task121 [color="#006400", penwidth=2.0, label="Flow"];
+  Task120 -> Task122 [color="#006400", penwidth=2.0, label="Flow"];
+  Task120 -> Task127 [color="#006400", penwidth=2.0, label="Flow"];
+  Task120 -> Task131 [color="#006400", penwidth=2.0, label="Flow"];
+  Task121 -> Task122 [color="#006400", penwidth=2.0, label="Flow"];
+  Task122 -> Task123 [color="#006400", penwidth=2.0, label="Flow"];
+  Task124 -> Task135 [color="#006400", penwidth=2.0, label="Flow"];
+  Task125 -> Task126 [color="#006400", penwidth=2.0, label="Flow"];
+  Task126 -> Task127 [color="#006400", penwidth=2.0, label="Flow"];
+  Task127 -> Task128 [color="#006400", penwidth=2.0, label="Flow"];
+  Task129 -> Task130 [color="#006400", penwidth=2.0, label="Flow"];
+  Task130 -> Task131 [color="#006400", penwidth=2.0, label="Flow"];
+  Task131 -> Task132 [color="#006400", penwidth=2.0, label="Flow"];
+  Task133 -> Task146 [color="#006400", penwidth=2.0, label="Flow"];
+  Task134 -> Task136 [color="#006400", penwidth=2.0, label="Flow"];
+  Task138 -> Task139 [color="#006400", penwidth=2.0, label="Flow"];
+  Task139 -> Task140 [color="#006400", penwidth=2.0, label="Flow"];
+  Task139 -> Task141 [color="#006400", penwidth=2.0, label="Flow"];
+  Task141 -> Task142 [color="#006400", penwidth=2.0, label="Flow"];
+  Task142 -> Task143 [color="#006400", penwidth=2.0, label="Flow"];
+  Task142 -> Task144 [color="#006400", penwidth=2.0, label="Flow"];
+  Task143 -> Task144 [color="#006400", penwidth=2.0, label="Flow"];
+  Task144 -> Task145 [color="#006400", penwidth=2.0, label="Flow"];
+  Task149 -> Task151 [color="#006400", penwidth=2.0, label="Flow"];
+  Task150 -> Task152 [color="#006400", penwidth=2.0, label="Flow"];
+  Task151 -> Task152 [color="#006400", penwidth=2.0, label="Flow"];
+  Task152 -> Task153 [color="#006400", penwidth=2.0, label="Flow"];
+  Task153 -> Task154 [color="#006400", penwidth=2.0, label="Flow"];
+  Task154 -> Task155 [color="#006400", penwidth=2.0, label="Flow"];
+  Task154 -> Task157 [color="#006400", penwidth=2.0, label="Flow"];
+  Task154 -> Task166 [color="#006400", penwidth=2.0, label="Flow"];
+  Task154 -> Task189 [color="#006400", penwidth=2.0, label="Flow"];
+  Task155 -> Task156 [color="#006400", penwidth=2.0, label="Flow"];
+  Task156 -> Task166 [color="#006400", penwidth=2.0, label="Flow"];
+  Task157 -> Task158 [color="#006400", penwidth=2.0, label="Flow"];
+  Task157 -> Task160 [color="#006400", penwidth=2.0, label="Flow"];
+  Task158 -> Task159 [color="#006400", penwidth=2.0, label="Flow"];
+  Task159 -> Task160 [color="#006400", penwidth=2.0, label="Flow"];
+  Task160 -> Task161 [color="#006400", penwidth=2.0, label="Flow"];
+  Task161 -> Task162 [color="#006400", penwidth=2.0, label="Flow"];
+  Task162 -> Task163 [color="#006400", penwidth=2.0, label="Flow"];
+  Task163 -> Task164 [color="#006400", penwidth=2.0, label="Flow"];
+  Task164 -> Task165 [color="#006400", penwidth=2.0, label="Flow"];
+  Task165 -> Task168 [color="#006400", penwidth=2.0, label="Flow"];
+  Task166 -> Task167 [color="#006400", penwidth=2.0, label="Flow"];
+  Task167 -> Task169 [color="#006400", penwidth=2.0, label="Flow"];
+  Task168 -> Task169 [color="#006400", penwidth=2.0, label="Flow"];
+  Task169 -> Task170 [color="#006400", penwidth=2.0, label="Flow"];
+  Task170 -> Task172 [color="#006400", penwidth=2.0, label="Flow"];
+  Task171 -> Task173 [color="#006400", penwidth=2.0, label="Flow"];
+  Task172 -> Task174 [color="#006400", penwidth=2.0, label="Flow"];
+  Task173 -> Task174 [color="#006400", penwidth=2.0, label="Flow"];
+  Task174 -> Task175 [color="#006400", penwidth=2.0, label="Flow"];
+  Task175 -> Task176 [color="#006400", penwidth=2.0, label="Flow"];
+  Task175 -> Task177 [color="#006400", penwidth=2.0, label="Flow"];
+  Task175 -> Task179 [color="#006400", penwidth=2.0, label="Flow"];
+  Task176 -> Task183 [color="#006400", penwidth=2.0, label="Flow"];
+  Task177 -> Task178 [color="#006400", penwidth=2.0, label="Flow"];
+  Task178 -> Task179 [color="#006400", penwidth=2.0, label="Flow"];
+  Task179 -> Task180 [color="#006400", penwidth=2.0, label="Flow"];
+  Task180 -> Task181 [color="#006400", penwidth=2.0, label="Flow"];
+  Task181 -> Task182 [color="#006400", penwidth=2.0, label="Flow"];
+  Task182 -> Task183 [color="#006400", penwidth=2.0, label="Flow"];
+  Task183 -> Task185 [color="#006400", penwidth=2.0, label="Flow"];
+  Task184 -> Task186 [color="#006400", penwidth=2.0, label="Flow"];
+  Task185 -> Task187 [color="#006400", penwidth=2.0, label="Flow"];
+  Task186 -> Task187 [color="#006400", penwidth=2.0, label="Flow"];
+  Task187 -> Task188 [color="#006400", penwidth=2.0, label="Flow"];
+  Task188 -> Task189 [color="#006400", penwidth=2.0, label="Flow"];
+}
+
+=== Profit-Based Spatial Orchestration (Resource Complementarity) ===
+MaxFusionSize=1
+
+--- Time Step 0 ---
+  Block 138 (Ops: 28, Score: 1.76) -> Placed at (0, 0)
+  Block 45 (Ops: 28, Score: 1.76) -> Placed at (1, 0)
+  Block 147 (Ops: 31, Score: 1.35) -> Placed at (2, 0)
+  Block 137 (Ops: 31, Score: 1.35) -> Placed at (3, 0)
+  Block 59 (Ops: 31, Score: 1.35) -> Placed at (0, 1)
+  Block 44 (Ops: 31, Score: 1.35) -> Placed at (1, 1)
+  Block 2 (Ops: 31, Score: 1.08) -> Placed at (2, 1)
+  Block 4 (Ops: 31, Score: 1.08) -> Placed at (3, 1)
+  Block 46 (Ops: 29, Score: 0.78) -> Placed at (0, 2)
+  Block 86 (Ops: 24, Score: 0.32) -> Placed at (1, 2)
+  Block 184 (Ops: 23, Score: 0.25) -> Placed at (2, 2)
+  Block 171 (Ops: 23, Score: 0.25) -> Placed at (3, 2)
+  Block 97 (Ops: 23, Score: 0.25) -> Placed at (0, 3)
+  Block 83 (Ops: 23, Score: 0.25) -> Placed at (1, 3)
+  Block 43 (Ops: 24, Score: 0.25) -> Placed at (2, 3)
+  Block 40 (Ops: 27, Score: 0.25) -> Placed at (3, 3)
+Step Latency: 31
+
+--- Time Step 1 ---
+  Block 139 (Ops: 30, Score: 0.64) -> Placed at (0, 0)
+  Block 47 (Ops: 30, Score: 0.64) -> Placed at (1, 0)
+  Block 3 (Ops: 27, Score: 0.63) -> Placed at (2, 0)
+  Block 85 (Ops: 25, Score: 0.44) -> Placed at (3, 0)
+  Block 99 (Ops: 25, Score: 0.44) -> Placed at (0, 1)
+  Block 173 (Ops: 25, Score: 0.44) -> Placed at (1, 1)
+  Block 186 (Ops: 25, Score: 0.44) -> Placed at (2, 1)
+  Block 148 (Ops: 27, Score: 0.25) -> Placed at (3, 1)
+  Block 42 (Ops: 27, Score: 0.25) -> Placed at (0, 2)
+  Block 39 (Ops: 27, Score: 0.25) -> Placed at (1, 2)
+  Block 134 (Ops: 27, Score: 0.25) -> Placed at (2, 2)
+  Block 133 (Ops: 27, Score: 0.25) -> Placed at (3, 2)
+  Block 60 (Ops: 27, Score: 0.25) -> Placed at (0, 3)
+  Block 124 (Ops: 27, Score: 0.25) -> Placed at (1, 3)
+  Block 30 (Ops: 27, Score: 0.25) -> Placed at (2, 3)
+  Block 58 (Ops: 24, Score: 0.19) -> Placed at (3, 3)
+Step Latency: 30
+
+--- Time Step 2 ---
+  Block 50 (Ops: 34, Score: 1.42) -> Placed at (0, 0)
+  Block 140 (Ops: 34, Score: 1.42) -> Placed at (1, 0)
+  Block 51 (Ops: 29, Score: 0.95) -> Placed at (2, 0)
+  Block 141 (Ops: 29, Score: 0.95) -> Placed at (3, 0)
+  Block 5 (Ops: 27, Score: 0.63) -> Placed at (0, 1)
+  Block 41 (Ops: 27, Score: 0.25) -> Placed at (1, 1)
+  Block 135 (Ops: 27, Score: 0.25) -> Placed at (2, 1)
+  Block 146 (Ops: 27, Score: 0.25) -> Placed at (3, 1)
+  Block 136 (Ops: 27, Score: 0.25) -> Placed at (0, 2)
+  Block 57 (Ops: 27, Score: 0.25) -> Placed at (1, 2)
+  Block 27 (Ops: 24, Score: 0.19) -> Placed at (2, 2)
+  Block 0 (Ops: 24, Score: 0.19) -> Placed at (3, 2)
+  Block 150 (Ops: 25, Score: 0.18) -> Placed at (0, 3)
+  Block 62 (Ops: 25, Score: 0.18) -> Placed at (1, 3)
+  Block 31 (Ops: 23, Score: 0.18) -> Placed at (2, 3)
+  Block 119 (Ops: 23, Score: 0.18) -> Placed at (3, 3)
+Step Latency: 34
+
+--- Time Step 3 ---
+  Block 142 (Ops: 28, Score: 1.76) -> Placed at (0, 0)
+  Block 52 (Ops: 28, Score: 1.76) -> Placed at (1, 0)
+  Block 9 (Ops: 26, Score: 1.17) -> Placed at (2, 0)
+  Block 7 (Ops: 27, Score: 0.42) -> Placed at (3, 0)
+  Block 121 (Ops: 25, Score: 0.32) -> Placed at (0, 1)
+  Block 32 (Ops: 25, Score: 0.32) -> Placed at (1, 1)
+  Block 125 (Ops: 23, Score: 0.18) -> Placed at (2, 1)
+  Block 149 (Ops: 23, Score: 0.18) -> Placed at (3, 1)
+  Block 24 (Ops: 23, Score: 0.18) -> Placed at (0, 2)
+  Block 35 (Ops: 23, Score: 0.18) -> Placed at (1, 2)
+  Block 129 (Ops: 23, Score: 0.18) -> Placed at (2, 2)
+  Block 61 (Ops: 23, Score: 0.18) -> Placed at (3, 2)
+  Block 1 (Ops: 31, Score: 0.12) -> Placed at (0, 3)
+  Block 53 (Ops: 26, Score: 0.11) -> Placed at (1, 3)
+  Block 48 (Ops: 24, Score: 0.09) -> Placed at (2, 3)
+  Block 49 (Ops: 24, Score: 0.09) -> Placed at (3, 3)
+Step Latency: 31
+
+--- Time Step 4 ---
+  Block 143 (Ops: 29, Score: 0.75) -> Placed at (0, 0)
+  Block 54 (Ops: 29, Score: 0.75) -> Placed at (1, 0)
+  Block 11 (Ops: 27, Score: 0.54) -> Placed at (2, 0)
+  Block 8 (Ops: 26, Score: 0.34) -> Placed at (3, 0)
+  Block 126 (Ops: 25, Score: 0.32) -> Placed at (0, 1)
+  Block 151 (Ops: 25, Score: 0.32) -> Placed at (1, 1)
+  Block 26 (Ops: 25, Score: 0.32) -> Placed at (2, 1)
+  Block 36 (Ops: 25, Score: 0.32) -> Placed at (3, 1)
+  Block 130 (Ops: 25, Score: 0.32) -> Placed at (0, 2)
+  Block 63 (Ops: 25, Score: 0.32) -> Placed at (1, 2)
+  Block 10 (Ops: 24, Score: 0.08) -> Placed at (2, 2)
+  Block 6 (Ops: 24, Score: 0.08) -> Placed at (3, 2)
+Step Latency: 29
+
+--- Time Step 5 ---
+  Block 152 (Ops: 31, Score: 1.66) -> Placed at (0, 0)
+  Block 64 (Ops: 31, Score: 1.66) -> Placed at (1, 0)
+  Block 144 (Ops: 29, Score: 0.95) -> Placed at (2, 0)
+  Block 55 (Ops: 29, Score: 0.95) -> Placed at (3, 0)
+  Block 19 (Ops: 27, Score: 0.54) -> Placed at (0, 1)
+  Block 12 (Ops: 26, Score: 0.34) -> Placed at (1, 1)
+Step Latency: 31
+
+--- Time Step 6 ---
+  Block 13 (Ops: 27, Score: 0.69) -> Placed at (0, 0)
+  Block 153 (Ops: 27, Score: 0.55) -> Placed at (1, 0)
+  Block 65 (Ops: 27, Score: 0.55) -> Placed at (2, 0)
+  Block 20 (Ops: 27, Score: 0.55) -> Placed at (3, 0)
+  Block 145 (Ops: 27, Score: 0.31) -> Placed at (0, 1)
+  Block 56 (Ops: 27, Score: 0.31) -> Placed at (1, 1)
+Step Latency: 27
+
+--- Time Step 7 ---
+  Block 14 (Ops: 27, Score: 0.69) -> Placed at (0, 0)
+  Block 66 (Ops: 27, Score: 0.63) -> Placed at (1, 0)
+Step Latency: 27
+
+--- Time Step 8 ---
+  Block 69 (Ops: 26, Score: 1.17) -> Placed at (0, 0)
+  Block 15 (Ops: 27, Score: 0.54) -> Placed at (1, 0)
+  Block 67 (Ops: 27, Score: 0.42) -> Placed at (2, 0)
+Step Latency: 27
+
+--- Time Step 9 ---
+  Block 70 (Ops: 27, Score: 0.54) -> Placed at (0, 0)
+  Block 16 (Ops: 26, Score: 0.34) -> Placed at (1, 0)
+  Block 68 (Ops: 26, Score: 0.34) -> Placed at (2, 0)
+Step Latency: 27
+
+--- Time Step 10 ---
+  Block 78 (Ops: 27, Score: 0.54) -> Placed at (0, 0)
+  Block 71 (Ops: 26, Score: 0.34) -> Placed at (1, 0)
+  Block 17 (Ops: 26, Score: 0.34) -> Placed at (2, 0)
+Step Latency: 27
+
+--- Time Step 11 ---
+  Block 72 (Ops: 27, Score: 0.69) -> Placed at (0, 0)
+  Block 79 (Ops: 27, Score: 0.55) -> Placed at (1, 0)
+  Block 18 (Ops: 26, Score: 0.34) -> Placed at (2, 0)
+Step Latency: 27
+
+--- Time Step 12 ---
+  Block 73 (Ops: 27, Score: 0.69) -> Placed at (0, 0)
+  Block 21 (Ops: 27, Score: 0.56) -> Placed at (1, 0)
+Step Latency: 27
+
+--- Time Step 13 ---
+  Block 74 (Ops: 27, Score: 0.54) -> Placed at (0, 0)
+  Block 22 (Ops: 27, Score: 0.54) -> Placed at (1, 0)
+Step Latency: 27
+
+--- Time Step 14 ---
+  Block 23 (Ops: 27, Score: 0.55) -> Placed at (0, 0)
+  Block 75 (Ops: 26, Score: 0.34) -> Placed at (1, 0)
+Step Latency: 27
+
+--- Time Step 15 ---
+  Block 76 (Ops: 26, Score: 0.34) -> Placed at (0, 0)
+  Block 25 (Ops: 25, Score: 0.18) -> Placed at (1, 0)
+Step Latency: 26
+
+--- Time Step 16 ---
+  Block 28 (Ops: 31, Score: 1.66) -> Placed at (0, 0)
+  Block 33 (Ops: 31, Score: 1.66) -> Placed at (1, 0)
+  Block 37 (Ops: 31, Score: 1.66) -> Placed at (2, 0)
+  Block 77 (Ops: 26, Score: 0.34) -> Placed at (3, 0)
+Step Latency: 31
+
+--- Time Step 17 ---
+  Block 80 (Ops: 27, Score: 0.56) -> Placed at (0, 0)
+  Block 29 (Ops: 27, Score: 0.55) -> Placed at (1, 0)
+  Block 34 (Ops: 27, Score: 0.55) -> Placed at (2, 0)
+  Block 38 (Ops: 27, Score: 0.55) -> Placed at (3, 0)
+Step Latency: 27
+
+--- Time Step 18 ---
+  Block 81 (Ops: 27, Score: 0.54) -> Placed at (0, 0)
+Step Latency: 27
+
+--- Time Step 19 ---
+  Block 82 (Ops: 27, Score: 0.55) -> Placed at (0, 0)
+Step Latency: 27
+
+--- Time Step 20 ---
+  Block 84 (Ops: 25, Score: 0.18) -> Placed at (0, 0)
+Step Latency: 25
+
+--- Time Step 21 ---
+  Block 87 (Ops: 31, Score: 2.29) -> Placed at (0, 0)
+Step Latency: 31
+
+--- Time Step 22 ---
+  Block 88 (Ops: 27, Score: 0.85) -> Placed at (0, 0)
+Step Latency: 27
+
+--- Time Step 23 ---
+  Block 89 (Ops: 26, Score: 1.59) -> Placed at (0, 0)
+  Block 90 (Ops: 26, Score: 1.59) -> Placed at (1, 0)
+Step Latency: 26
+
+--- Time Step 24 ---
+  Block 91 (Ops: 27, Score: 2.60) -> Placed at (0, 0)
+Step Latency: 27
+
+--- Time Step 25 ---
+  Block 92 (Ops: 27, Score: 0.95) -> Placed at (0, 0)
+Step Latency: 27
+
+--- Time Step 26 ---
+  Block 93 (Ops: 27, Score: 2.60) -> Placed at (0, 0)
+Step Latency: 27
+
+--- Time Step 27 ---
+  Block 94 (Ops: 26, Score: 1.59) -> Placed at (0, 0)
+Step Latency: 26
+
+--- Time Step 28 ---
+  Block 95 (Ops: 26, Score: 1.59) -> Placed at (0, 0)
+Step Latency: 26
+
+--- Time Step 29 ---
+  Block 96 (Ops: 27, Score: 0.95) -> Placed at (0, 0)
+Step Latency: 27
+
+--- Time Step 30 ---
+  Block 98 (Ops: 25, Score: 0.29) -> Placed at (0, 0)
+Step Latency: 25
+
+--- Time Step 31 ---
+  Block 100 (Ops: 31, Score: 2.29) -> Placed at (0, 0)
+Step Latency: 31
+
+--- Time Step 32 ---
+  Block 101 (Ops: 27, Score: 0.55) -> Placed at (0, 0)
+Step Latency: 27
+
+--- Time Step 33 ---
+  Block 102 (Ops: 27, Score: 0.63) -> Placed at (0, 0)
+Step Latency: 27
+
+--- Time Step 34 ---
+  Block 105 (Ops: 26, Score: 1.17) -> Placed at (0, 0)
+  Block 154 (Ops: 27, Score: 0.63) -> Placed at (1, 0)
+  Block 103 (Ops: 27, Score: 0.42) -> Placed at (2, 0)
+Step Latency: 27
+
+--- Time Step 35 ---
+  Block 157 (Ops: 26, Score: 1.17) -> Placed at (0, 0)
+  Block 106 (Ops: 27, Score: 0.54) -> Placed at (1, 0)
+  Block 155 (Ops: 27, Score: 0.42) -> Placed at (2, 0)
+  Block 104 (Ops: 26, Score: 0.34) -> Placed at (3, 0)
+Step Latency: 27
+
+--- Time Step 36 ---
+  Block 158 (Ops: 27, Score: 0.54) -> Placed at (0, 0)
+  Block 114 (Ops: 27, Score: 0.54) -> Placed at (1, 0)
+  Block 107 (Ops: 26, Score: 0.34) -> Placed at (2, 0)
+  Block 156 (Ops: 26, Score: 0.34) -> Placed at (3, 0)
+Step Latency: 27
+
+--- Time Step 37 ---
+  Block 108 (Ops: 27, Score: 0.69) -> Placed at (0, 0)
+  Block 115 (Ops: 27, Score: 0.55) -> Placed at (1, 0)
+  Block 166 (Ops: 27, Score: 0.54) -> Placed at (2, 0)
+  Block 159 (Ops: 26, Score: 0.34) -> Placed at (3, 0)
+Step Latency: 27
+
+--- Time Step 38 ---
+  Block 160 (Ops: 27, Score: 0.69) -> Placed at (0, 0)
+  Block 109 (Ops: 27, Score: 0.69) -> Placed at (1, 0)
+  Block 167 (Ops: 27, Score: 0.55) -> Placed at (2, 0)
+Step Latency: 27
+
+--- Time Step 39 ---
+  Block 161 (Ops: 27, Score: 0.69) -> Placed at (0, 0)
+  Block 110 (Ops: 27, Score: 0.54) -> Placed at (1, 0)
+Step Latency: 27
+
+--- Time Step 40 ---
+  Block 162 (Ops: 27, Score: 0.54) -> Placed at (0, 0)
+  Block 111 (Ops: 26, Score: 0.34) -> Placed at (1, 0)
+Step Latency: 27
+
+--- Time Step 41 ---
+  Block 163 (Ops: 26, Score: 0.34) -> Placed at (0, 0)
+  Block 112 (Ops: 26, Score: 0.34) -> Placed at (1, 0)
+Step Latency: 26
+
+--- Time Step 42 ---
+  Block 164 (Ops: 26, Score: 0.34) -> Placed at (0, 0)
+  Block 113 (Ops: 26, Score: 0.34) -> Placed at (1, 0)
+Step Latency: 26
+
+--- Time Step 43 ---
+  Block 116 (Ops: 27, Score: 0.56) -> Placed at (0, 0)
+  Block 165 (Ops: 26, Score: 0.34) -> Placed at (1, 0)
+Step Latency: 27
+
+--- Time Step 44 ---
+  Block 168 (Ops: 27, Score: 0.56) -> Placed at (0, 0)
+  Block 117 (Ops: 27, Score: 0.54) -> Placed at (1, 0)
+Step Latency: 27
+
+--- Time Step 45 ---
+  Block 118 (Ops: 27, Score: 0.55) -> Placed at (0, 0)
+  Block 169 (Ops: 27, Score: 0.54) -> Placed at (1, 0)
+Step Latency: 27
+
+--- Time Step 46 ---
+  Block 170 (Ops: 27, Score: 0.55) -> Placed at (0, 0)
+  Block 120 (Ops: 25, Score: 0.18) -> Placed at (1, 0)
+Step Latency: 27
+
+--- Time Step 47 ---
+  Block 122 (Ops: 31, Score: 1.66) -> Placed at (0, 0)
+  Block 127 (Ops: 31, Score: 1.66) -> Placed at (1, 0)
+  Block 131 (Ops: 31, Score: 1.66) -> Placed at (2, 0)
+  Block 172 (Ops: 25, Score: 0.18) -> Placed at (3, 0)
+Step Latency: 31
+
+--- Time Step 48 ---
+  Block 174 (Ops: 31, Score: 2.29) -> Placed at (0, 0)
+  Block 123 (Ops: 27, Score: 0.55) -> Placed at (1, 0)
+  Block 128 (Ops: 27, Score: 0.55) -> Placed at (2, 0)
+  Block 132 (Ops: 27, Score: 0.55) -> Placed at (3, 0)
+Step Latency: 31
+
+--- Time Step 49 ---
+  Block 175 (Ops: 27, Score: 0.85) -> Placed at (0, 0)
+Step Latency: 27
+
+--- Time Step 50 ---
+  Block 176 (Ops: 26, Score: 1.59) -> Placed at (0, 0)
+  Block 177 (Ops: 26, Score: 1.59) -> Placed at (1, 0)
+Step Latency: 26
+
+--- Time Step 51 ---
+  Block 178 (Ops: 27, Score: 2.60) -> Placed at (0, 0)
+Step Latency: 27
+
+--- Time Step 52 ---
+  Block 179 (Ops: 27, Score: 0.95) -> Placed at (0, 0)
+Step Latency: 27
+
+--- Time Step 53 ---
+  Block 180 (Ops: 27, Score: 2.60) -> Placed at (0, 0)
+Step Latency: 27
+
+--- Time Step 54 ---
+  Block 181 (Ops: 26, Score: 1.59) -> Placed at (0, 0)
+Step Latency: 26
+
+--- Time Step 55 ---
+  Block 182 (Ops: 26, Score: 1.59) -> Placed at (0, 0)
+Step Latency: 26
+
+--- Time Step 56 ---
+  Block 183 (Ops: 27, Score: 0.95) -> Placed at (0, 0)
+Step Latency: 27
+
+--- Time Step 57 ---
+  Block 185 (Ops: 25, Score: 0.29) -> Placed at (0, 0)
+Step Latency: 25
+
+--- Time Step 58 ---
+  Block 187 (Ops: 31, Score: 2.29) -> Placed at (0, 0)
+Step Latency: 31
+
+--- Time Step 59 ---
+  Block 188 (Ops: 27, Score: 0.55) -> Placed at (0, 0)
+Step Latency: 27
+
+--- Time Step 60 ---
+  Block 189 (Ops: 27, Score: 0.63) -> Placed at (0, 0)
+Step Latency: 27
+
+[RESULT] TimeSteps=61 Blocks=190 Latency=1680 Failed=0
+==========================================
+=== Negotiated Routing (PathFinder) ===
+Identified 120 inter-tile nets.
+Iter 0: 39 overflow links.
+Iter 1: 46 overflow links.
+Iter 2: 45 overflow links.
+Iter 3: 45 overflow links.
+Iter 4: 45 overflow links.
+Iter 5: 45 overflow links.
+Iter 6: 45 overflow links.
+Iter 7: 45 overflow links.
+Iter 8: 45 overflow links.
+Iter 9: 45 overflow links.
+Iter 10: 45 overflow links.
+Iter 11: 45 overflow links.
+Iter 12: 45 overflow links.
+Iter 13: 45 overflow links.
+Iter 14: 45 overflow links.
+Iter 15: 45 overflow links.
+Iter 16: 45 overflow links.
+Iter 17: 45 overflow links.
+Iter 18: 45 overflow links.
+Iter 19: 45 overflow links.
+Iter 20: 45 overflow links.
+Iter 21: 45 overflow links.
+Iter 22: 45 overflow links.
+Iter 23: 45 overflow links.
+Iter 24: 45 overflow links.
+Iter 25: 45 overflow links.
+Iter 26: 45 overflow links.
+Iter 27: 44 overflow links.
+Iter 28: 45 overflow links.
+Iter 29: 45 overflow links.
+Iter 30: 45 overflow links.
+Iter 31: 45 overflow links.
+Iter 32: 43 overflow links.
+Iter 33: 43 overflow links.
+Iter 34: 43 overflow links.
+Iter 35: 35 overflow links.
+Iter 36: 31 overflow links.
+Iter 37: 28 overflow links.
+Iter 38: 22 overflow links.
+Iter 39: 16 overflow links.
+Iter 40: 9 overflow links.
+Iter 41: 4 overflow links.
+Iter 42: 1 overflow links.
+Routing converged at iter 43!
+Net 2->3: (2,0)
+Net 3->5: (0,1)
+Net 4->5: (0,1)
+Net 5->7: (3,0)
+Net 5->9: (2,0)
+Net 5->66: (1,0)
+Net 8->19: (0,1)
+Net 9->13: (0,0)
+Net 11->12: (1,1)
+Net 12->13: (0,0)
+Net 14->15: (1,0)
+Net 16->17: (2,0)
+Net 18->21: (1,0)
+Net 19->20: (3,0)
+Net 20->22: (1,0)
+Net 22->23: (0,0)
+Net 23->25: (1,0)
+Net 24->26: (2,1)
+Net 25->28: (0,0)
+Net 25->37: (2,0)
+Net 26->28: (0,0)
+Net 28->29: (1,0)
+Net 30->41: (1,1)
+Net 31->32: (1,1)
+Net 32->33: (1,0)
+Net 33->34: (2,0)
+Net 35->36: (3,1)
+Net 36->37: (2,0)
+Net 37->38: (3,0)
+Net 40->42: (0,2)
+Net 46->47: (1,0)
+Net 46->139: (0,0)
+Net 47->50: (0,0)
+Net 47->51: (2,0)
+Net 51->52: (1,0)
+Net 52->55: (3,0)
+Net 54->55: (3,0)
+Net 55->56: (1,1)
+Net 61->63: (3,2)->(3,3)->(2,3)->(1,3)->(1,2)
+Net 62->64: (1,0)
+Net 63->64: (1,0)
+Net 64->65: (2,0)
+Net 65->66: (1,0)
+Net 66->67: (2,0)
+Net 66->69: (0,0)
+Net 66->78: (0,0)
+Net 66->102: (0,0)
+Net 68->78: (0,0)
+Net 70->71: (1,0)
+Net 71->72: (0,0)
+Net 74->75: (1,0)
+Net 75->76: (0,0)
+Net 76->77: (3,0)
+Net 77->80: (0,0)
+Net 78->79: (1,0)
+Net 79->81: (0,0)
+Net 83->85: (3,0)
+Net 85->87: (0,0)
+Net 88->90: (1,0)
+Net 90->91: (0,0)
+Net 97->99: (0,3)->(0,2)->(0,1)
+Net 99->100: (0,0)
+Net 102->103: (2,0)
+Net 102->114: (1,0)
+Net 102->154: (1,0)
+Net 103->104: (2,0)->(2,1)->(3,1)->(3,0)
+Net 104->114: (1,0)
+Net 105->106: (1,0)
+Net 106->107: (2,0)
+Net 107->108: (0,0)
+Net 108->109: (1,0)
+Net 113->116: (0,0)
+Net 116->117: (1,0)
+Net 117->118: (0,0)
+Net 118->120: (1,0)
+Net 119->121: (0,1)
+Net 120->122: (0,0)
+Net 120->131: (2,0)
+Net 121->122: (0,1)->(0,0)
+Net 122->123: (1,0)
+Net 124->135: (2,1)
+Net 125->126: (0,1)
+Net 126->127: (1,0)
+Net 127->128: (2,0)
+Net 129->130: (0,2)
+Net 130->131: (2,0)
+Net 131->132: (3,0)
+Net 133->146: (3,2)->(3,1)
+Net 134->136: (0,2)
+Net 139->140: (1,0)
+Net 139->141: (3,0)
+Net 141->142: (0,0)
+Net 142->144: (2,0)
+Net 143->144: (2,0)
+Net 144->145: (0,1)
+Net 149->151: (3,1)->(2,1)->(1,1)
+Net 150->152: (0,0)
+Net 151->152: (0,0)
+Net 152->153: (0,0)->(0,1)->(1,1)->(1,0)
+Net 154->155: (1,0)->(1,1)->(2,1)->(2,0)
+Net 154->157: (0,0)
+Net 154->166: (1,0)->(2,0)
+Net 154->189: (0,0)
+Net 155->156: (2,0)->(3,0)
+Net 156->166: (3,0)->(2,0)
+Net 158->159: (3,0)
+Net 159->160: (0,0)
+Net 164->165: (1,0)
+Net 165->168: (0,0)
+Net 167->169: (2,0)->(1,0)
+Net 168->169: (1,0)
+Net 169->170: (1,0)->(0,0)
+Net 170->172: (3,0)
+Net 171->173: (3,2)->(2,2)->(1,2)->(1,1)
+Net 172->174: (0,0)
+Net 173->174: (0,0)
+Net 175->177: (0,0)->(1,0)
+Net 177->178: (0,0)
+Net 184->186: (2,2)->(2,1)
+Net 186->187: (0,0)

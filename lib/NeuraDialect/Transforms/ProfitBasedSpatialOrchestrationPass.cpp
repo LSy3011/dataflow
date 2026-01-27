@@ -511,8 +511,17 @@ public:
 
             if (pos.first != -1) {
                 b->x = pos.first; b->y = pos.second;
-                llvm::errs() << llvm::format("  Block %d (Ops: %lld, Score: %.2f) -> Placed at (%d, %d)\n", 
-                                             b->blockId, b->total_op_count, b->total_scaling_score, b->x, b->y);
+		for (int tid : b->taskIds) {
+                    if (taskMap.count(tid)) {
+                        Operation* taskOp = taskMap[tid].op;
+                        OpBuilder builder(taskOp);
+                        taskOp->setAttr("neura.placement_x", builder.getI32IntegerAttr(b->x));
+                        taskOp->setAttr("neura.placement_y", builder.getI32IntegerAttr(b->y));
+                    }
+                }
+		llvm::errs() << llvm::format("  Block %d (Ops: %lld, Score: %.2f) -> Placed at (%d, %d)\n", 
+                                             b->blockId, b->total_op_count, b->total_scaling_score, b->x, b->y);                
+
             } else {
                 llvm::errs() << llvm::format("  Block %d -> FAILED\n", b->blockId);
             }

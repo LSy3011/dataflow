@@ -2,119 +2,21 @@
 #include "NeuraDialect/NeuraOps.h"
 #include "NeuraDialect/NeuraPasses.h"
 #include "mlir/Dialect/Func/IR/FuncOps.h"
-#include "mlir/Dialect/LLVMIR/LLVMDialect.h"
-#include "mlir/IR/PatternMatch.h"
+#include "mlir/IR/Builders.h"
+#include "mlir/IR/BuiltinOps.h"
 #include "mlir/Pass/Pass.h"
-#include "mlir/Transforms/GreedyPatternRewriteDriver.h"
 
 using namespace mlir;
 
-#define GEN_PASS_DEF_INSERTDATAMOV
-#include "NeuraDialect/NeuraPasses.h.inc"
-
 namespace {
-struct InsertDataMovForNeuraOps : public RewritePattern {
-  InsertDataMovForNeuraOps(MLIRContext *context)
-      : RewritePattern(/*matchAnyOpTypeTag=*/MatchAnyOpTypeTag(), /*benefit=*/1,
-                       context) {}
-
-  LogicalResult matchAndRewrite(Operation *op,
-                                PatternRewriter &rewriter) const override {
-    if (op->getDialect()->getNamespace() != "neura" ||
-        isa<neura::DataMovOp>(op)) {
-      return failure();
-    }
-
-    bool all_inputs_are_mov_except_reserve =
-        llvm::all_of(op->getOperands(), [](Value v) {
-          Operation *def_op = v.getDefiningOp();
-          return isa_and_nonnull<neura::DataMovOp>(def_op) ||
-                 isa_and_nonnull<neura::ReserveOp>(def_op);
-        });
-
-    if (all_inputs_are_mov_except_reserve) {
-      return failure(); // All operands are already handled
-    }
-
-    // // Skips ops that already being inserted mov on the operands.
-    // bool all_inputs_are_mov = llvm::all_of(op->getOperands(), [](Value v) {
-    //   return isa_and_nonnull<neura::DataMovOp>(v.getDefiningOp());
-    // });
-    // if (all_inputs_are_mov) {
-    //   return failure();
-    // }
-
-    // // Special case: skips rewriting phi if any operand is from reserve.
-    // if (isa<neura::PhiOp>(op)) {
-    //   bool has_reserved_input = llvm::any_of(op->getOperands(), [](Value v)
-    //   {
-    //     return isa_and_nonnull<neura::ReserveOp>(v.getDefiningOp());
-    //   });
-
-    //   if (has_reserved_input)
-    //     return failure();  // Skip entire phi if any operand is reserved.
-    // }
-
-    // Makes sure none of the operand has being processed.
-    bool has_any_mov_input = llvm::any_of(op->getOperands(), [](Value v) {
-      return isa_and_nonnull<neura::DataMovOp>(v.getDefiningOp());
-    });
-    if (has_any_mov_input) {
-      llvm::errs() << "Warning: Operand already wrapped in neura.data_mov: "
-                   << *op << "\n";
-    }
-    assert(!has_any_mov_input &&
-           "Unexpected: operand already wrapped in neura.mov");
-
-    Location loc = op->getLoc();
-
-    // Skips adding mov if the consumer is ctrl_mov.
-    if (isa<neura::CtrlMovOp>(op)) {
-      return failure(); // do not rewrite
-    }
-
-    // Wraps operands in mov.
-    SmallVector<Value> new_operands;
-    for (Value operand : op->getOperands()) {
-      Operation *producer = operand.getDefiningOp();
-
-      // Skips adding mov for any operand that comes from a reserve op.
-      if (producer && isa<neura::ReserveOp>(producer)) {
-        new_operands.push_back(operand);
-        continue;
-      }
-
-      auto mov =
-          rewriter.create<neura::DataMovOp>(loc, operand.getType(), operand);
-      new_operands.push_back(mov);
-    }
-
-    // Clones op with new operands.
-    OperationState state(loc, op->getName());
-    state.addOperands(new_operands);
-    state.addTypes(op->getResultTypes());
-    state.addAttributes(op->getAttrs());
-
-    // Copies successors for terminator operations.
-    if (op->hasTrait<OpTrait::IsTerminator>()) {
-      for (Block *successor : op->getSuccessors()) {
-        state.addSuccessors(successor);
-      }
-    }
-
-    Operation *new_op = rewriter.create(state);
-    rewriter.replaceOp(op, new_op->getResults());
-    return success();
-  }
-};
 
 struct InsertDataMovPass
-    : public PassWrapper<InsertDataMovPass, OperationPass<ModuleOp>> {
+    : public PassWrapper<InsertDataMovPass, OperationPass<func::FuncOp>> {
   MLIR_DEFINE_EXPLICIT_INTERNAL_INLINE_TYPE_ID(InsertDataMovPass)
 
   StringRef getArgument() const override { return "insert-data-mov"; }
   StringRef getDescription() const override {
-    return "Insert neura.data_mov before all neura dialect operations.";
+    return "Insert neura.data_mov for data dependencies between compute operations.";
   }
 
   void getDependentDialects(DialectRegistry &registry) const override {
@@ -122,33 +24,62 @@ struct InsertDataMovPass
   }
 
   void runOnOperation() override {
-    RewritePatternSet patterns(&getContext());
-    patterns.add<InsertDataMovForNeuraOps>(&getContext());
-    FrozenRewritePatternSet frozen(std::move(patterns));
+    func::FuncOp func = getOperation();
+    OpBuilder builder(&getContext());
 
-    ModuleOp module_op = getOperation();
+    // 收集需要替换的操作数位置 (Operation*, OperandIndex)
+    SmallVector<std::pair<Operation*, unsigned>> operandsToReplace;
 
-    // Applies to every region inside the module (regardless of func type,
-    // e.g., mlir func or llvm func).
-    module_op.walk([&](Operation *op) {
-      if (!op->getRegions().empty()) {
-        for (Region &region : op->getRegions()) {
-          if (failed(applyPatternsGreedily(region, frozen))) {
-            signalPassFailure();
-          }
+    func.walk([&](Operation *op) {
+      // 1. 跳过自身就是搬运指令的操作 (防止无限递归)
+      if (isa<neura::DataMovOp>(op) || isa<neura::CtrlMovOp>(op)) return;
+      
+      // 2. 跳过 Terminator (如 return/yield)，通常不需要搬运
+      if (op->hasTrait<OpTrait::IsTerminator>()) return;
+
+      // 3. 检查所有操作数
+      for (unsigned i = 0; i < op->getNumOperands(); ++i) {
+        Value operand = op->getOperand(i);
+        Operation *defOp = operand.getDefiningOp();
+
+        // 只有当操作数由另一个操作产生时（非函数参数 BlockArgument），才插入搬运
+        if (defOp) {
+            // 避免重复包装：如果生产者已经是 DataMov，跳过
+            if (isa<neura::DataMovOp>(defOp)) continue;
+
+            // [关键修改]：不再检查 defOp 的 Dialect 必须是 neura
+            // 只要是本地定义的值，都视为需要通过 NoC 搬运的数据依赖
+            operandsToReplace.push_back({op, i});
         }
       }
     });
+
+    // 执行插入
+    for (auto pair : operandsToReplace) {
+      Operation *op = pair.first;
+      unsigned idx = pair.second;
+      Value originalVal = op->getOperand(idx);
+
+      builder.setInsertionPoint(op); // 在消费者之前插入
+      
+      // 创建 DataMovOp
+      auto mov = builder.create<neura::DataMovOp>(
+          op->getLoc(), 
+          originalVal.getType(), 
+          originalVal
+      );
+
+      // 替换操作数：让 op 使用 mov 的结果，而不是原始值
+      op->setOperand(idx, mov.getResult());
+    }
   }
 };
 } // namespace
 
 namespace mlir {
 namespace neura {
-
 std::unique_ptr<Pass> createInsertDataMovPass() {
   return std::make_unique<InsertDataMovPass>();
 }
-
 } // namespace neura
 } // namespace mlir

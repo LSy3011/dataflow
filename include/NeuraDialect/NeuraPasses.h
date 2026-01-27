@@ -31,6 +31,7 @@ std::unique_ptr<mlir::Pass> createRemovePredicatedTypePass();
 std::unique_ptr<OperationPass<func::FuncOp>> createStaticFeatureExtractionPass();
 std::unique_ptr<OperationPass<func::FuncOp>> createTaskDependencyAnalysisPass();
 std::unique_ptr<OperationPass<func::FuncOp>> createProfitBasedSpatialOrchestrationPass();
+std::unique_ptr<OperationPass<func::FuncOp>> createNegotiatedRoutingPass();
 // ====================================
 // Optimization Passes
 // ====================================

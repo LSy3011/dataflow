@@ -18,6 +18,7 @@ add_mlir_library(
     StaticFeatureExtractionPass.cpp
     TaskDependencyAnalysisPass.cpp
     ProfitBasedSpatialOrchestrationPass.cpp
+    NegotiatedRoutingPass.cpp
 	
     DEPENDS
     MLIRNeuraTransformsIncGen

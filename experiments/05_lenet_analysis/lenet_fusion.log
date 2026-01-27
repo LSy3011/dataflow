@@ -1,0 +1,90 @@
+[mlir-neura-opt] No architecture specification file provided, using default configuration
+--------------------------------------------------
+Static Features Extracted & Annotated
+--------------------------------------------------
+==================================================================
+Task Analysis: Analyzing & Annotating IR for main
+==================================================================
+Found 20 tasks and 13 dependencies.
+
+[DOT Graph Visualization]
+digraph TaskGraph {
+  rankdir=TB;
+  node [shape=box, style=filled, fillcolor=white];
+  Task0 [label="Task 0"];
+  Task1 [label="Task 1"];
+  Task2 [label="Task 2"];
+  Task3 [label="Task 3"];
+  Task4 [label="Task 4"];
+  Task5 [label="Task 5"];
+  Task6 [label="Task 6"];
+  Task7 [label="Task 7"];
+  Task8 [label="Task 8"];
+  Task9 [label="Task 9"];
+  Task10 [label="Task 10"];
+  Task11 [label="Task 11"];
+  Task12 [label="Task 12"];
+  Task13 [label="Task 13"];
+  Task14 [label="Task 14"];
+  Task15 [label="Task 15"];
+  Task16 [label="Task 16"];
+  Task17 [label="Task 17"];
+  Task18 [label="Task 18"];
+  Task19 [label="Task 19"];
+  Task1 -> Task2 [color="#006400", penwidth=2.0, label="Flow"];
+  Task2 -> Task4 [color="#006400", penwidth=2.0, label="Flow"];
+  Task4 -> Task5 [color="#006400", penwidth=2.0, label="Flow"];
+  Task6 -> Task8 [color="#006400", penwidth=2.0, label="Flow"];
+  Task8 -> Task9 [color="#006400", penwidth=2.0, label="Flow"];
+  Task9 -> Task10 [color="#006400", penwidth=2.0, label="Flow"];
+  Task10 -> Task13 [color="#006400", penwidth=2.0, label="Flow"];
+  Task11 -> Task13 [color="#006400", penwidth=2.0, label="Flow"];
+  Task13 -> Task14 [color="#006400", penwidth=2.0, label="Flow"];
+  Task14 -> Task15 [color="#006400", penwidth=2.0, label="Flow"];
+  Task15 -> Task18 [color="#006400", penwidth=2.0, label="Flow"];
+  Task16 -> Task18 [color="#006400", penwidth=2.0, label="Flow"];
+  Task18 -> Task19 [color="#006400", penwidth=2.0, label="Flow"];
+}
+
+=== Profit-Based Spatial Orchestration (Resource Complementarity) ===
+MaxFusionSize=20
+
+--- Time Step 0 ---
+  Block 1 (Ops: 39, Score: 0.92) -> Placed at (0, 0)
+  Block 6 (Ops: 10, Score: 0.81) -> Placed at (1, 0)
+  Block 0 (Ops: 26, Score: 0.11) -> Placed at (2, 0)
+  Block 3 (Ops: 26, Score: 0.11) -> Placed at (3, 0)
+  Block 7 (Ops: 22, Score: 0.05) -> Placed at (0, 1)
+  Block 12 (Ops: 22, Score: 0.05) -> Placed at (1, 1)
+  Block 17 (Ops: 22, Score: 0.05) -> Placed at (2, 1)
+Step Latency: 39
+
+--- Time Step 1 ---
+  Block 2 (Ops: 29, Score: 1.14) -> Placed at (0, 0)
+  Block 9 (Ops: 10, Score: 0.50) -> Placed at (1, 0)
+Step Latency: 29
+
+--- Time Step 2 ---
+  Block 4 (Ops: 39, Score: 0.90) -> Placed at (0, 0)
+  Block 11 (Ops: 10, Score: 0.54) -> Placed at (1, 0)
+Step Latency: 39
+
+--- Time Step 3 ---
+  Block 5 (Ops: 29, Score: 1.10) -> Placed at (0, 0)
+  Block 14 (Ops: 10, Score: 0.50) -> Placed at (1, 0)
+Step Latency: 29
+
+--- Time Step 4 ---
+  Block 16 (Ops: 10, Score: 0.46) -> Placed at (0, 0)
+Step Latency: 10
+
+--- Time Step 5 ---
+  Block 19 (Ops: 25, Score: 0.17) -> Placed at (0, 0)
+Step Latency: 25
+
+[RESULT] TimeSteps=6 Blocks=15 Latency=171 Failed=0
+==========================================
+=== Negotiated Routing (PathFinder) ===
+Identified 1 inter-tile nets.
+Routing converged at iter 0!
+Net 15->18: (1,0)->(0,0)
